@@ -1,0 +1,32 @@
+//
+//  XZQ_Prefix.pch
+//  XZQMusic
+//
+//  Created by qhzc-iMac-02 on 2020/5/6.
+//  Copyright © 2020 Xuzq. All rights reserved.
+//
+
+#ifndef XZQ_Prefix_pch
+#define XZQ_Prefix_pch
+
+#import "XZQBaseDefinition.h"
+
+#import "CommonUtils.h"
+#import "ZXTheme.h"
+#import "UrlDefinition.h"
+#import "NetworkTool.h"
+#import "UIColor+Expanded.h"
+
+#import "XZQErrorView.h"
+#import "SwitchHeaderView.h"
+
+#import <GPUImage.h>
+#import <Photos/Photos.h>
+#import <Masonry.h>
+#import <SDWebImage.h>
+#import <AFNetworking.h>
+#import <SVProgressHUD.h>
+#import <MJExtension/MJExtension.h>
+#import <IQKeyboardManager.h>
+
+#endif
