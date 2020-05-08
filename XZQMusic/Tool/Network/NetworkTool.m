@@ -28,34 +28,80 @@
     return manager;
 }
 
++ (void)getXSRFInfo:(void (^)(id obj))completeBlock {
+    NSString *URL = @"http://ustbhuangyi.com/music/#/recommend";
+    AFHTTPSessionManager *manager = [self manager];
+    manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json",@"text/json",@"text/plain",@"text/html",@"application/x-javascript",@"application/octet-stream",nil];
+    [manager GET:URL parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+        NSDictionary *allHeaders = response.allHeaderFields;
+        NSString *cookies = allHeaders[@"Set-Cookie"];
+        [XZQSingleton sharedInstance].cookie = cookies;
+        cookies = [cookies stringByReplacingOccurrencesOfString:@"; Path=/," withString:@"&"];
+        cookies = [cookies stringByReplacingOccurrencesOfString:@"; Path=/" withString:@"&"];
+        cookies = [cookies stringByReplacingOccurrencesOfString:@"; " withString:@"&"];
+        cookies = [cookies stringByReplacingOccurrencesOfString:@";" withString:@"&"];
+        cookies = [cookies stringByReplacingOccurrencesOfString:@" " withString:@""];
+        completeBlock([self dictionaryFromQuery:cookies]);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completeBlock(nil);
+    }];
+}
+
++ (NSDictionary*)dictionaryFromQuery:(NSString*)query {
+    NSCharacterSet* delimiterSet = [NSCharacterSet characterSetWithCharactersInString:@"&"];
+    NSMutableDictionary* pairs = [NSMutableDictionary dictionary];
+    NSScanner* scanner = [[NSScanner alloc]initWithString:query];
+    while(![scanner isAtEnd]) {
+        NSString* pairString = nil;
+        [scanner scanUpToCharactersFromSet:delimiterSet intoString:&pairString];
+        [scanner scanCharactersFromSet:delimiterSet intoString:NULL];
+        NSArray* kvPair = [pairString componentsSeparatedByString:@"="];
+        if(kvPair.count==2) {
+            NSString* key = [kvPair objectAtIndex:0];
+            NSString* value = [kvPair objectAtIndex:1];
+            [pairs setObject:value forKey:key];
+        }
+    }
+    return [NSDictionary dictionaryWithDictionary:pairs];
+}
+
 + (void)getUrl:(NSString *)url withParams:(NSDictionary *)params backInfoWhenErrorBlock:(void (^)(id obj, NSError *error))completeBlock
 {
     // 包装参数
     NSMutableDictionary *paramsDic = [NSMutableDictionary dictionaryWithDictionary:params];
     // 可以先添加一些每个接口都需要的参数，例如版本号、平台信息等
-    [paramsDic setValue:@"ios" forKey:@"platform"];
+//    [paramsDic setValue:@"ios" forKey:@"platform"];
     //遍历获取所有的key和value
     NSMutableArray *strings = [NSMutableArray array];
     [paramsDic enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if ([obj isKindOfClass:[NSDictionary class]]) {
             NSString *objStr = [CommonUtils convert2JSONWithDictionary:obj];
-            NSString *str = [NSString stringWithFormat:@"&%@=%@",key,objStr];
+            NSString *str = [NSString stringWithFormat:@"%@=%@&",key,objStr];
             [strings addObject:str];
         } else {
-            NSString *str = [NSString stringWithFormat:@"&%@=%@",key,obj];
+            NSString *str = [NSString stringWithFormat:@"%@=%@&",key,obj];
             [strings addObject:str];
         }
     }];
     // 最终的url
     NSString *getURL = [NSString stringWithFormat:@"%@?%@", url, [strings componentsJoinedByString:@""]];
+    getURL = [getURL substringToIndex:getURL.length-1];
     NSString *URL = [getURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     AFHTTPSessionManager *manager = [self manager];
+//    NSLog(@"URL-->%@", URL);
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json",@"text/json",@"text/plain",@"text/html",@"application/x-javascript",@"application/octet-stream",nil];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"XSRF-TOKEN=%@; _csrf=%@", [XZQSingleton sharedInstance].xsrfToken, [XZQSingleton sharedInstance].csrf] forHTTPHeaderField:@"Cookie"];
+    [manager.requestSerializer setValue:[XZQSingleton sharedInstance].xsrfToken forHTTPHeaderField:@"X-XSRF-TOKEN"];
     [manager GET:URL parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *jsonStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"jsonStr:%@", jsonStr);
+//        NSLog(@"jsonStr:%@", jsonStr);
+        // 有时候callbacks开头会有空格，这里做个处理
+        jsonStr = [jsonStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         NSDictionary *obj = [NSDictionary dictionary];
         if ([jsonStr hasPrefix:@"callback("]) {
             jsonStr = [jsonStr substringFromIndex:9];
@@ -146,14 +192,22 @@
     [manager.requestSerializer setValue:@"application/json, text/plain, */*" forHTTPHeaderField:@"Accept"];
     [manager.requestSerializer setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [manager.requestSerializer setQueryStringSerializationWithStyle:AFHTTPRequestQueryStringStringifyStyle];
+    [manager.requestSerializer setValue:[NSString stringWithFormat:@"XSRF-TOKEN=%@; _csrf=%@", [XZQSingleton sharedInstance].xsrfToken, [XZQSingleton sharedInstance].csrf] forHTTPHeaderField:@"Cookie"];
+    [manager.requestSerializer setValue:[XZQSingleton sharedInstance].xsrfToken forHTTPHeaderField:@"X-XSRF-TOKEN"];
     
     [manager POST:url parameters:paramsDic headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *jsonStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"jsonStr:%@", jsonStr);
         if (responseObject) {
-            NSDictionary *obj = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+            NSString *jsonStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            NSDictionary *obj = [NSDictionary dictionary];
+            if ([jsonStr hasPrefix:@"callback("]) {
+                jsonStr = [jsonStr substringFromIndex:9];
+                jsonStr = [jsonStr substringToIndex:jsonStr.length-1];
+                obj = [self dictionaryWithJsonString:jsonStr];
+            } else {
+                obj = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+            }
             if (obj) {
                 completeBlock(obj, nil);
             } else {

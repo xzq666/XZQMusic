@@ -47,7 +47,7 @@
 
 - (void)setupUI {
     NSArray *titleArray = @[@"推荐", @"歌手", @"排行", @"搜索"];
-    self.switchHeaderView = [[SwitchHeaderView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, 45) withTitleArray:titleArray withSelectIdx:0 withUnSelectColor:[UIColor hexStringToColor:TitleUnSelectColor] withSelectColor:[UIColor hexStringToColor:TitleSelectColor]];
+    self.switchHeaderView = [[SwitchHeaderView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, 45) withTitleArray:titleArray withSelectIdx:0 withUnSelectColor:TitleUnSelectColor withSelectColor:TitleSelectColor];
     WeakSelf(weakSelf);
     self.switchHeaderView.block = ^(NSInteger selectIdx) {
         [weakSelf headerViewClick:selectIdx];

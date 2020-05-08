@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkTool : NSObject
 
++ (void)getXSRFInfo:(void (^)(id obj))completeBlock;
+
 + (void)getUrl:(NSString *)url withParams:(NSDictionary *)params backInfoWhenErrorBlock:(void (^)(id obj, NSError *error))completeBlock;
 
 + (void)getUrl:(NSString *)url withParams:(NSDictionary *)params backViewWhenErrorBlock:(void (^)(id obj, UIView *errorView))completeBlock;

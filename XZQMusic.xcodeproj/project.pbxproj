@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B9C4CF30CAB392A7BAA7EAE3 /* libPods-XZQMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3262D972049066D9EF1EA1CF /* libPods-XZQMusic.a */; };
+		F0B00FD32464140D00C15D3D /* SingerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B00FD22464140D00C15D3D /* SingerListModel.m */; };
+		F0B00FD62464161600C15D3D /* UIImage+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B00FD52464161600C15D3D /* UIImage+Expanded.m */; };
+		F0B00FD9246416D400C15D3D /* SingerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B00FD8246416D400C15D3D /* SingerListCell.m */; };
 		F0B0E10E2462878000E2FFC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E10D2462878000E2FFC5 /* AppDelegate.m */; };
 		F0B0E1112462878000E2FFC5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1102462878000E2FFC5 /* SceneDelegate.m */; };
 		F0B0E1142462878000E2FFC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1132462878000E2FFC5 /* ViewController.m */; };
@@ -73,12 +76,29 @@
 		F0B0E1F92462B00300E2FFC5 /* SingerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1F82462B00300E2FFC5 /* SingerController.m */; };
 		F0B0E1FC2462B01C00E2FFC5 /* RankController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1FB2462B01C00E2FFC5 /* RankController.m */; };
 		F0B0E1FF2462B03100E2FFC5 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1FE2462B03100E2FFC5 /* SearchController.m */; };
+		F0C81CBF2463E3E700244FBD /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CBE2463E3E700244FBD /* RecommendHeaderView.m */; };
+		F0C81CC22463F48E00244FBD /* RecommendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC12463F48E00244FBD /* RecommendListCell.m */; };
+		F0C81CC72464008100244FBD /* RankListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC62464008100244FBD /* RankListModel.m */; };
+		F0C81CCA246404D900244FBD /* RankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC9246404D900244FBD /* RankListCell.m */; };
+		F0D8DC40246527F400999AA9 /* XZQIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC3F246527F400999AA9 /* XZQIndexView.m */; };
+		F0D8DC4324652BF800999AA9 /* XZQSectionIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC4224652BF800999AA9 /* XZQSectionIndicatorView.m */; };
+		F0D8DC47246551B700999AA9 /* XZQSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC46246551B700999AA9 /* XZQSingleton.m */; };
+		F0D8DC4B24655D9E00999AA9 /* HotSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC4A24655D9E00999AA9 /* HotSearchModel.m */; };
+		F0D8DC50246568D400999AA9 /* XZQHotTag.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC4F246568D400999AA9 /* XZQHotTag.m */; };
+		F0D8DC5324656AAB00999AA9 /* XZQHotTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC5224656AAB00999AA9 /* XZQHotTagView.m */; };
+		F0D8DC5624656D1600999AA9 /* XZQHotTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC5524656D1600999AA9 /* XZQHotTagButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0831805EC99AC6D2FC626227 /* Pods-XZQMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZQMusic.debug.xcconfig"; path = "Target Support Files/Pods-XZQMusic/Pods-XZQMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		1819C1ED2214849D91B506EE /* Pods-XZQMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZQMusic.release.xcconfig"; path = "Target Support Files/Pods-XZQMusic/Pods-XZQMusic.release.xcconfig"; sourceTree = "<group>"; };
 		3262D972049066D9EF1EA1CF /* libPods-XZQMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XZQMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B00FD12464140D00C15D3D /* SingerListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingerListModel.h; sourceTree = "<group>"; };
+		F0B00FD22464140D00C15D3D /* SingerListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingerListModel.m; sourceTree = "<group>"; };
+		F0B00FD42464161600C15D3D /* UIImage+Expanded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Expanded.h"; sourceTree = "<group>"; };
+		F0B00FD52464161600C15D3D /* UIImage+Expanded.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Expanded.m"; sourceTree = "<group>"; };
+		F0B00FD7246416D400C15D3D /* SingerListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SingerListCell.h; path = ../SingerListCell.h; sourceTree = "<group>"; };
+		F0B00FD8246416D400C15D3D /* SingerListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SingerListCell.m; path = ../SingerListCell.m; sourceTree = "<group>"; };
 		F0B0E1092462878000E2FFC5 /* XZQ音乐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XZQ音乐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B0E10C2462878000E2FFC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F0B0E10D2462878000E2FFC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -205,11 +225,33 @@
 		F0B0E1F42462AF2600E2FFC5 /* RecommendController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendController.h; sourceTree = "<group>"; };
 		F0B0E1F52462AF2600E2FFC5 /* RecommendController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendController.m; sourceTree = "<group>"; };
 		F0B0E1F72462B00300E2FFC5 /* SingerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingerController.h; sourceTree = "<group>"; };
-		F0B0E1F82462B00300E2FFC5 /* SingerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingerController.m; sourceTree = "<group>"; };
+		F0B0E1F82462B00300E2FFC5 /* SingerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingerController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		F0B0E1FA2462B01C00E2FFC5 /* RankController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankController.h; sourceTree = "<group>"; };
 		F0B0E1FB2462B01C00E2FFC5 /* RankController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankController.m; sourceTree = "<group>"; };
 		F0B0E1FD2462B03100E2FFC5 /* SearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
 		F0B0E1FE2462B03100E2FFC5 /* SearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
+		F0C81CBD2463E3E700244FBD /* RecommendHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderView.h; sourceTree = "<group>"; };
+		F0C81CBE2463E3E700244FBD /* RecommendHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
+		F0C81CC02463F48E00244FBD /* RecommendListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendListCell.h; sourceTree = "<group>"; };
+		F0C81CC12463F48E00244FBD /* RecommendListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendListCell.m; sourceTree = "<group>"; };
+		F0C81CC52464008100244FBD /* RankListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankListModel.h; sourceTree = "<group>"; };
+		F0C81CC62464008100244FBD /* RankListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankListModel.m; sourceTree = "<group>"; };
+		F0C81CC8246404D900244FBD /* RankListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RankListCell.h; path = ../RankListCell.h; sourceTree = "<group>"; };
+		F0C81CC9246404D900244FBD /* RankListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RankListCell.m; path = ../RankListCell.m; sourceTree = "<group>"; };
+		F0D8DC3E246527F400999AA9 /* XZQIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQIndexView.h; sourceTree = "<group>"; };
+		F0D8DC3F246527F400999AA9 /* XZQIndexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQIndexView.m; sourceTree = "<group>"; };
+		F0D8DC4124652BF800999AA9 /* XZQSectionIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQSectionIndicatorView.h; sourceTree = "<group>"; };
+		F0D8DC4224652BF800999AA9 /* XZQSectionIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQSectionIndicatorView.m; sourceTree = "<group>"; };
+		F0D8DC45246551B700999AA9 /* XZQSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQSingleton.h; sourceTree = "<group>"; };
+		F0D8DC46246551B700999AA9 /* XZQSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQSingleton.m; sourceTree = "<group>"; };
+		F0D8DC4924655D9E00999AA9 /* HotSearchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSearchModel.h; sourceTree = "<group>"; };
+		F0D8DC4A24655D9E00999AA9 /* HotSearchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSearchModel.m; sourceTree = "<group>"; };
+		F0D8DC4E246568D400999AA9 /* XZQHotTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQHotTag.h; sourceTree = "<group>"; };
+		F0D8DC4F246568D400999AA9 /* XZQHotTag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQHotTag.m; sourceTree = "<group>"; };
+		F0D8DC5124656AAB00999AA9 /* XZQHotTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQHotTagView.h; sourceTree = "<group>"; };
+		F0D8DC5224656AAB00999AA9 /* XZQHotTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQHotTagView.m; sourceTree = "<group>"; };
+		F0D8DC5424656D1600999AA9 /* XZQHotTagButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQHotTagButton.h; sourceTree = "<group>"; };
+		F0D8DC5524656D1600999AA9 /* XZQHotTagButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQHotTagButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +281,27 @@
 				1819C1ED2214849D91B506EE /* Pods-XZQMusic.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F0B00FCF246413F400C15D3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0D8DC3C246527AE00999AA9 /* Cell */,
+				F0D8DC3E246527F400999AA9 /* XZQIndexView.h */,
+				F0D8DC3F246527F400999AA9 /* XZQIndexView.m */,
+				F0D8DC4124652BF800999AA9 /* XZQSectionIndicatorView.h */,
+				F0D8DC4224652BF800999AA9 /* XZQSectionIndicatorView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0B00FD0246413FA00C15D3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0B00FD12464140D00C15D3D /* SingerListModel.h */,
+				F0B00FD22464140D00C15D3D /* SingerListModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F0B0E1002462878000E2FFC5 = {
@@ -598,6 +661,7 @@
 		F0B0E19824628C2300E2FFC5 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				F0D8DC442465519100999AA9 /* Singleton */,
 				F0B0E19924628C2300E2FFC5 /* Category */,
 				F0B0E1A124628C2300E2FFC5 /* Network */,
 				F0B0E1A024628C2300E2FFC5 /* CommonUtils.h */,
@@ -618,6 +682,8 @@
 				F0B0E19F24628C2300E2FFC5 /* NSError+XZQError.m */,
 				F0B0E1EA2462A59700E2FFC5 /* UIColor+Expanded.h */,
 				F0B0E1EB2462A59700E2FFC5 /* UIColor+Expanded.m */,
+				F0B00FD42464161600C15D3D /* UIImage+Expanded.h */,
+				F0B00FD52464161600C15D3D /* UIImage+Expanded.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -658,8 +724,11 @@
 		F0B0E1E62462A29D00E2FFC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F0C81CBC2463DBF400244FBD /* Cell */,
 				F0B0E1E72462A30500E2FFC5 /* SwitchHeaderView.h */,
 				F0B0E1E82462A30500E2FFC5 /* SwitchHeaderView.m */,
+				F0C81CBD2463E3E700244FBD /* RecommendHeaderView.h */,
+				F0C81CBE2463E3E700244FBD /* RecommendHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -667,6 +736,8 @@
 		F0B0E1ED2462AE6C00E2FFC5 /* Singer */ = {
 			isa = PBXGroup;
 			children = (
+				F0B00FD0246413FA00C15D3D /* Model */,
+				F0B00FCF246413F400C15D3D /* View */,
 				F0B0E1F22462AF0A00E2FFC5 /* Controller */,
 			);
 			path = Singer;
@@ -675,6 +746,8 @@
 		F0B0E1EE2462AE7B00E2FFC5 /* Rank */ = {
 			isa = PBXGroup;
 			children = (
+				F0C81CC42464006F00244FBD /* Model */,
+				F0C81CC32464006900244FBD /* View */,
 				F0B0E1F12462AF0400E2FFC5 /* Controller */,
 			);
 			path = Rank;
@@ -683,6 +756,8 @@
 		F0B0E1EF2462AE8800E2FFC5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F0D8DC4C2465689800999AA9 /* HotSearchTag */,
+				F0D8DC482465596500999AA9 /* Model */,
 				F0B0E1F02462AEF800E2FFC5 /* Controller */,
 			);
 			path = Search;
@@ -722,6 +797,81 @@
 				F0B0E1F52462AF2600E2FFC5 /* RecommendController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0C81CBC2463DBF400244FBD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0C81CC02463F48E00244FBD /* RecommendListCell.h */,
+				F0C81CC12463F48E00244FBD /* RecommendListCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F0C81CC32464006900244FBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0D8DC3D246527C400999AA9 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0C81CC42464006F00244FBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0C81CC52464008100244FBD /* RankListModel.h */,
+				F0C81CC62464008100244FBD /* RankListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0D8DC3C246527AE00999AA9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0B00FD7246416D400C15D3D /* SingerListCell.h */,
+				F0B00FD8246416D400C15D3D /* SingerListCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F0D8DC3D246527C400999AA9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0C81CC8246404D900244FBD /* RankListCell.h */,
+				F0C81CC9246404D900244FBD /* RankListCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F0D8DC442465519100999AA9 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				F0D8DC45246551B700999AA9 /* XZQSingleton.h */,
+				F0D8DC46246551B700999AA9 /* XZQSingleton.m */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		F0D8DC482465596500999AA9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0D8DC4924655D9E00999AA9 /* HotSearchModel.h */,
+				F0D8DC4A24655D9E00999AA9 /* HotSearchModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0D8DC4C2465689800999AA9 /* HotSearchTag */ = {
+			isa = PBXGroup;
+			children = (
+				F0D8DC4E246568D400999AA9 /* XZQHotTag.h */,
+				F0D8DC4F246568D400999AA9 /* XZQHotTag.m */,
+				F0D8DC5124656AAB00999AA9 /* XZQHotTagView.h */,
+				F0D8DC5224656AAB00999AA9 /* XZQHotTagView.m */,
+				F0D8DC5424656D1600999AA9 /* XZQHotTagButton.h */,
+				F0D8DC5524656D1600999AA9 /* XZQHotTagButton.m */,
+			);
+			path = HotSearchTag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -842,15 +992,20 @@
 				F0B0E1D324628C2300E2FFC5 /* NSObject+ZXCustomTheme.m in Sources */,
 				F0B0E1D224628C2300E2FFC5 /* ZXThemeCustomTool.m in Sources */,
 				F0B0E1BF24628C2300E2FFC5 /* ZXCollectionViewTheme.m in Sources */,
+				F0C81CC72464008100244FBD /* RankListModel.m in Sources */,
 				F0B0E1CE24628C2300E2FFC5 /* UITextField+ZXTheme.m in Sources */,
+				F0D8DC4B24655D9E00999AA9 /* HotSearchModel.m in Sources */,
 				F0B0E1D824628C2300E2FFC5 /* NetworkTool.m in Sources */,
+				F0D8DC5624656D1600999AA9 /* XZQHotTagButton.m in Sources */,
 				F0B0E1FF2462B03100E2FFC5 /* SearchController.m in Sources */,
 				F0B0E1BA24628C2300E2FFC5 /* ZXTabBarItemTheme.m in Sources */,
 				F0B0E1AA24628C2300E2FFC5 /* ZXPageControlTheme.m in Sources */,
 				F0B0E1142462878000E2FFC5 /* ViewController.m in Sources */,
 				F0B0E1E524629DA200E2FFC5 /* DiscListModel.m in Sources */,
+				F0D8DC40246527F400999AA9 /* XZQIndexView.m in Sources */,
 				F0B0E1C324628C2300E2FFC5 /* UIImageView+ZXTheme.m in Sources */,
 				F0B0E1E2246299F200E2FFC5 /* TopBannerModel.m in Sources */,
+				F0D8DC47246551B700999AA9 /* XZQSingleton.m in Sources */,
 				F0B0E1D124628C2300E2FFC5 /* ZXThemeRuntime.m in Sources */,
 				F0B0E1B624628C2300E2FFC5 /* ZXSegmentedControlTheme.m in Sources */,
 				F0B0E1B224628C2300E2FFC5 /* ZXLabelTheme.m in Sources */,
@@ -865,13 +1020,19 @@
 				F0B0E11F2462878B00E2FFC5 /* main.m in Sources */,
 				F0B0E1CB24628C2300E2FFC5 /* ZXTabBarTheme.m in Sources */,
 				F0B0E1D624628C2300E2FFC5 /* NSError+XZQError.m in Sources */,
+				F0D8DC4324652BF800999AA9 /* XZQSectionIndicatorView.m in Sources */,
+				F0C81CBF2463E3E700244FBD /* RecommendHeaderView.m in Sources */,
 				F0B0E1B824628C2300E2FFC5 /* UIView+ZXTheme.m in Sources */,
 				F0B0E1BB24628C2300E2FFC5 /* UITabBarItem+ZXTheme.m in Sources */,
 				F0B0E1C924628C2300E2FFC5 /* UIProgressView+ZXTheme.m in Sources */,
 				F0B0E1B524628C2300E2FFC5 /* UIButton+ZXTheme.m in Sources */,
 				F0B0E1BD24628C2300E2FFC5 /* UITextView+ZXTheme.m in Sources */,
 				F0B0E1C124628C2300E2FFC5 /* ZXBarButtonItemTheme.m in Sources */,
+				F0C81CCA246404D900244FBD /* RankListCell.m in Sources */,
+				F0B00FD32464140D00C15D3D /* SingerListModel.m in Sources */,
+				F0C81CC22463F48E00244FBD /* RecommendListCell.m in Sources */,
 				F0B0E1D024628C2300E2FFC5 /* ZXThemeTool.m in Sources */,
+				F0B00FD62464161600C15D3D /* UIImage+Expanded.m in Sources */,
 				F0B0E1C724628C2300E2FFC5 /* ZXTableViewTheme.m in Sources */,
 				F0B0E1D524628C2300E2FFC5 /* UITableView+XZQReload.m in Sources */,
 				F0B0E1CC24628C2300E2FFC5 /* UISlider+ZXTheme.m in Sources */,
@@ -884,6 +1045,7 @@
 				F0B0E1C824628C2300E2FFC5 /* ZXProgressViewTheme.m in Sources */,
 				F0B0E1AC24628C2300E2FFC5 /* UISwitch+ZXTheme.m in Sources */,
 				F0B0E1112462878000E2FFC5 /* SceneDelegate.m in Sources */,
+				F0D8DC50246568D400999AA9 /* XZQHotTag.m in Sources */,
 				F0B0E1BC24628C2300E2FFC5 /* ZXTextViewTheme.m in Sources */,
 				F0B0E1B424628C2300E2FFC5 /* ZXButtonTheme.m in Sources */,
 				F0B0E1CF24628C2300E2FFC5 /* ZXTextFieldTheme.m in Sources */,
@@ -895,7 +1057,9 @@
 				F0B0E1D724628C2300E2FFC5 /* XZQErrorView.m in Sources */,
 				F0B0E1F92462B00300E2FFC5 /* SingerController.m in Sources */,
 				F0B0E1F62462AF2600E2FFC5 /* RecommendController.m in Sources */,
+				F0D8DC5324656AAB00999AA9 /* XZQHotTagView.m in Sources */,
 				F0B0E1E92462A30500E2FFC5 /* SwitchHeaderView.m in Sources */,
+				F0B00FD9246416D400C15D3D /* SingerListCell.m in Sources */,
 				F0B0E1B924628C2300E2FFC5 /* ZXViewTheme.m in Sources */,
 				F0B0E1AF24628C2300E2FFC5 /* ZXActivityIndicatorViewTheme.m in Sources */,
 				F0B0E1AD24628C2300E2FFC5 /* ZXSwitchTheme.m in Sources */,

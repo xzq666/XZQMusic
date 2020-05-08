@@ -44,18 +44,6 @@
     return YES;
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    if (@available(iOS 13.0, *)) {
-        if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-            [ZXTheme defaultTheme].zx_darkTheme = YES;
-        } else {
-            [ZXTheme defaultTheme].zx_darkTheme = NO;
-        }
-    }
-    [CommonUtils initDarkTheme];
-    [[ZXTheme defaultTheme] zx_themeUpdate];
-}
-
 - (void)registIQKeyBoard {
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES;

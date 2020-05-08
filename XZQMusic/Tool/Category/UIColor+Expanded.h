@@ -18,11 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)hexStringToColor:(NSString *)stringToConvert;
 + (UIColor *)hexStringToColor:(NSString *)stringToConvert andAlpha:(CGFloat)alpha;
 
-/*
- 颜色转UIImage
- */
-+ (nullable UIImage *)imageFromColor:(nonnull UIColor *)color withSize:(CGSize)size;
-
 @end
 
 NS_ASSUME_NONNULL_END

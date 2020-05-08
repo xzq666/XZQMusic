@@ -39,7 +39,12 @@
 #define GTK (@"1928093487")
 
 // 颜色
-#define TitleUnSelectColor (@"#999999")
-#define TitleSelectColor (@"#FEC428")
+#define TitleUnSelectColor ([UIColor hexStringToColor:@"#999999"])
+#define TitleSelectColor ([UIColor hexStringToColor:@"#FEC428"])
+#define CellViewBackgroundColor ([ZXTheme defaultTheme].zx_isDarkTheme ? [UIColor hexStringToColor:@"#262626"] : [UIColor hexStringToColor:@"#F0F0F0"])
+#define TagViewBackgroundColor ([ZXTheme defaultTheme].zx_isDarkTheme ? [UIColor hexStringToColor:@"#282828"] : [UIColor hexStringToColor:@"#F0F0F0"])
+
+// singer头像url前缀
+#define SingerAvatarUrl (@"https://y.gtimg.cn/music/photo_new/T001R300x300M000")
 
 #endif /* XZQBaseDefinition_h */

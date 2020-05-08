@@ -14,4 +14,13 @@
 // 热门歌单推荐列表
 #define GetDiscList (@"http://ustbhuangyi.com/music/api/getDiscList")
 
+// 歌手列表
+#define SingerList (@"https://c.y.qq.com/v8/fcg-bin/v8.fcg")
+
+// 排行列表
+#define TopList (@"https://c.y.qq.com/v8/fcg-bin/fcg_myqq_toplist.fcg")
+
+// 热门搜索关键字
+#define HotKey (@"https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg")
+
 #endif

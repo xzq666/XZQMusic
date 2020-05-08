@@ -12,5 +12,6 @@ pod 'MJExtension'
 pod 'SVProgressHUD'
 pod 'GPUImage'
 pod 'IQKeyboardManager'
+pod 'SDCycleScrollView'
 
 end

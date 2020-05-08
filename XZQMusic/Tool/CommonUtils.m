@@ -7,6 +7,9 @@
 //
 
 #import "CommonUtils.h"
+#import "SwitchHeaderView.h"
+#import "RecommendHeaderView.h"
+#import "XZQHotTagButton.h"
 
 #pragma mark 获取Tabbar的背景色
 #define TabbarTintColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor])
@@ -15,7 +18,7 @@
 #pragma mark 获取NavBar标题的颜色
 #define NavBarTitleColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor])
 #pragma mark 获取TableView背景色
-#define TableViewBacColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor colorWithRed:240 / 255.0 green:240 / 255.0 blue:240 / 255.0 alpha:1])
+#define TableViewBacColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor])
 #pragma mark 获取TableViewCell背景色
 #define TableViewCellBacColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor])
 #pragma mark 获取TableViewCell中Label文字颜色
@@ -27,7 +30,7 @@
 #pragma mark 获取TableViewHeaderView中label文字颜色
 #define TableViewHeaderViewLabelTextColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeLightLevel2Color : [UIColor blackColor])
 #pragma mark 获取CollectionView背景色
-#define CollectionViewBacColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel1Color : [UIColor colorWithRed:240 / 255.0 green:240 / 255.0 blue:240 / 255.0 alpha:1])
+#define CollectionViewBacColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel1Color : [UIColor whiteColor])
 #pragma mark 获取CollectionViewCell背景色
 #define CollectionViewCellBacColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor])
 #pragma mark 获取CollectionViewCell中Label文字颜色
@@ -80,19 +83,25 @@
         tableViewTheme.separatorStyle = UITableViewCellSeparatorStyleNone;
         tableViewTheme.backgroundColor = TableViewBacColor;
         tableViewTheme.viewForHeaderInSection = ^UIView * _Nonnull(UIView * _Nonnull headerView, NSUInteger section) {
-            headerView.backgroundColor = TableViewHeaderViewBacColor;
+            for (UIView *view in headerView.subviews) {
+                if([view isKindOfClass:[UILabel class]] && view.tag != 30001){
+                    ((UILabel *)view).textColor = TableViewHeaderViewLabelTextColor;
+                }
+            }
+            return headerView;
+        };
+        tableViewTheme.viewForFooterInSection = ^UIView * _Nonnull(UIView * _Nonnull headerView, NSUInteger section) {
             for (UIView *view in headerView.subviews) {
                 if([view isKindOfClass:[UILabel class]]){
                     ((UILabel *)view).textColor = TableViewHeaderViewLabelTextColor;
                 }
-               
             }
             return headerView;
         };
         tableViewTheme.cellForRowAtIndexPath = ^UITableViewCell * _Nonnull(UITableViewCell * _Nonnull cell, NSIndexPath * _Nonnull indexPath) {
             cell.backgroundColor = TableViewCellBacColor;
             for (UIView *view in cell.contentView.subviews) {
-                if([view isKindOfClass:[UILabel class]]){
+                if([view isKindOfClass:[UILabel class]] && view.tag != 15000 && view.tag != 15001){
                     ((UILabel *)view).textColor = TableViewCellLabelTextColor;
                 }
             }
@@ -129,7 +138,7 @@
     [ZXTheme defaultTheme].zx_viewThemeBlock = ^ZXViewTheme * _Nonnull(UIView * _Nonnull view) {
         ZXViewTheme *viewTheme = [[ZXViewTheme alloc]init];
         // 指定自定义View设置背景色
-        if ([view isMemberOfClass:[SwitchHeaderView class]]) {
+        if ([view isMemberOfClass:[SwitchHeaderView class]] || [view isMemberOfClass:[RecommendHeaderView class]]) {
             viewTheme.backgroundColor = ControllerBacViewColor;
         }
         return viewTheme;
@@ -137,17 +146,13 @@
     //设置Button主题
     [ZXTheme defaultTheme].zx_buttonThemeBlock = ^ZXButtonTheme * _Nonnull(UIButton * _Nonnull button) {
         ZXButtonTheme *buttonTheme = [[ZXButtonTheme alloc]init];
-        if (button.tag < 10000) {
+        if (button.tag < 10000 && ![button isKindOfClass:[XZQHotTagButton class]]) {
             if([ZXTheme defaultTheme].zx_isDarkTheme) {
-//                buttonTheme.backgroundColor = ZXThemeDarkLevel1Color;
                 [buttonTheme setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 [buttonTheme setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-//                button.layer.borderColor = [UIColor whiteColor].CGColor;
             }else{
-//                buttonTheme.backgroundColor = [UIColor whiteColor];
                 [buttonTheme setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [buttonTheme setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-//                button.layer.borderColor = [UIColor blackColor].CGColor;
             }
         }
         return buttonTheme;

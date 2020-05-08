@@ -16,9 +16,10 @@
 #import "UrlDefinition.h"
 #import "NetworkTool.h"
 #import "UIColor+Expanded.h"
+#import "UIImage+Expanded.h"
 
 #import "XZQErrorView.h"
-#import "SwitchHeaderView.h"
+#import "XZQSingleton.h"
 
 #import <GPUImage.h>
 #import <Photos/Photos.h>
