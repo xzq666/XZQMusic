@@ -47,74 +47,67 @@
     
     // 保证请求结束后再刷新列表
     dispatch_group_t group = dispatch_group_create();
-    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
 
     // 获取Top Banner
     dispatch_group_enter(group);
-    dispatch_async(queue, ^{
-        NSDictionary *params = @{
-            @"g_tk": GTK,
-            @"inCharset": @"utf8",
-            @"outCharset": @"utf-8",
-            @"notice": @0,
-            @"format": @"json",
-            @"hostUin": @0,
-            @"needNewCode": @0,
-            @"-": @"recom7487255878826877",
-            @"data": @{@"comm":@{@"ct":@24},@"category":@{@"method":@"get_hot_category",@"param":@{@"qq":@""},@"module":@"music.web_category_svr"},@"recomPlaylist":@{@"method":@"get_hot_recommend",@"param":@{@"async":@1,@"cmd":@2},@"module":@"playlist.HotRecommendServer"},@"playlist":@{@"method":@"get_playlist_by_category",@"param":@{@"id":@8,@"curPage":@1,@"size":@40,@"order":@5,@"titleid":@8},@"module":@"playlist.PlayListPlazaServer"},@"new_song":@{@"module":@"newsong.NewSongServer",@"method":@"get_new_song_info",@"param":@{@"type":@5}},@"new_album":@{@"module":@"newalbum.NewAlbumServer",@"method":@"get_new_album_info",@"param":@{@"area":@1,@"sin":@0,@"num":@10}},@"new_album_tag":@{@"module":@"newalbum.NewAlbumServer",@"method":@"get_new_album_area",@"param":@{}},@"toplist":@{@"module":@"musicToplist.ToplistInfoServer",@"method":@"GetAll",@"param":@{}},@"focus":@{@"module":@"QQMusic.MusichallServer",@"method":@"GetFocus",@"param":@{}}}
-        };
-        [NetworkTool getUrl:GetTopBanner withParams:params backInfoWhenErrorBlock:^(id  _Nonnull obj, NSError * _Nonnull error) {
-            if (obj && obj[@"data"] && obj[@"data"][@"slider"] && [obj[@"data"][@"slider"] isKindOfClass:[NSArray class]]) {
-                NSArray *sliders = obj[@"data"][@"slider"];
-                [self.bannerDataSource removeAllObjects];
-                for (NSDictionary *slider in sliders) {
-                    TopBannerModel *model = [TopBannerModel mj_objectWithKeyValues:slider context:nil];
-                    [self.bannerDataSource addObject:model];
-                }
+    NSDictionary *bannerParams = @{
+        @"g_tk": GTK,
+        @"inCharset": @"utf8",
+        @"outCharset": @"utf-8",
+        @"notice": @0,
+        @"format": @"json",
+        @"hostUin": @0,
+        @"needNewCode": @0,
+        @"-": @"recom7487255878826877",
+        @"data": @{@"comm":@{@"ct":@24},@"category":@{@"method":@"get_hot_category",@"param":@{@"qq":@""},@"module":@"music.web_category_svr"},@"recomPlaylist":@{@"method":@"get_hot_recommend",@"param":@{@"async":@1,@"cmd":@2},@"module":@"playlist.HotRecommendServer"},@"playlist":@{@"method":@"get_playlist_by_category",@"param":@{@"id":@8,@"curPage":@1,@"size":@40,@"order":@5,@"titleid":@8},@"module":@"playlist.PlayListPlazaServer"},@"new_song":@{@"module":@"newsong.NewSongServer",@"method":@"get_new_song_info",@"param":@{@"type":@5}},@"new_album":@{@"module":@"newalbum.NewAlbumServer",@"method":@"get_new_album_info",@"param":@{@"area":@1,@"sin":@0,@"num":@10}},@"new_album_tag":@{@"module":@"newalbum.NewAlbumServer",@"method":@"get_new_album_area",@"param":@{}},@"toplist":@{@"module":@"musicToplist.ToplistInfoServer",@"method":@"GetAll",@"param":@{}},@"focus":@{@"module":@"QQMusic.MusichallServer",@"method":@"GetFocus",@"param":@{}}}
+    };
+    [NetworkTool getUrl:GetTopBanner withParams:bannerParams backInfoWhenErrorBlock:^(id  _Nonnull obj, NSError * _Nonnull error) {
+        if (obj && obj[@"data"] && obj[@"data"][@"slider"] && [obj[@"data"][@"slider"] isKindOfClass:[NSArray class]]) {
+            NSArray *sliders = obj[@"data"][@"slider"];
+            [self.bannerDataSource removeAllObjects];
+            for (NSDictionary *slider in sliders) {
+                TopBannerModel *model = [TopBannerModel mj_objectWithKeyValues:slider context:nil];
+                [self.bannerDataSource addObject:model];
             }
-            dispatch_group_leave(group);
-        }];
-    });
+        }
+        dispatch_group_leave(group);
+    }];
 
     // 获取热门歌单推荐
     dispatch_group_enter(group);
-    dispatch_async(queue, ^{
-        NSDictionary *params = @{
-            @"g_tk": GTK,
-            @"inCharset": @"utf8",
-            @"outCharset": @"utf-8",
-            @"notice": @0,
-            @"format": @"json",
-            @"hostUin": @0,
-            @"sin": @0,
-            @"ein": @29,
-            @"sortId": @5,
-            @"needNewCode": @0,
-            @"categoryId": @"10000000",
-            @"rnd": @"0.013530590371761408"
-        };
-        [NetworkTool getUrl:GetDiscList withParams:params backInfoWhenErrorBlock:^(id  _Nonnull obj, NSError * _Nonnull error) {
-            if (obj && obj[@"data"] && obj[@"data"][@"list"] && [obj[@"data"][@"list"] isKindOfClass:[NSArray class]]) {
-                NSArray *arr = obj[@"data"][@"list"];
-                [self.recommendDataSource removeAllObjects];
-                for (NSDictionary *dict in arr) {
-                    DiscListModel *model = [DiscListModel mj_objectWithKeyValues:dict context:nil];
-                    [self.recommendDataSource addObject:model];
-                }
+    NSDictionary *params = @{
+        @"g_tk": GTK,
+        @"inCharset": @"utf8",
+        @"outCharset": @"utf-8",
+        @"notice": @0,
+        @"format": @"json",
+        @"hostUin": @0,
+        @"sin": @0,
+        @"ein": @29,
+        @"sortId": @5,
+        @"needNewCode": @0,
+        @"categoryId": @"10000000",
+        @"rnd": @"0.013530590371761408"
+    };
+    [NetworkTool getUrl:GetDiscList withParams:params backInfoWhenErrorBlock:^(id  _Nonnull obj, NSError * _Nonnull error) {
+        if (obj && obj[@"data"] && obj[@"data"][@"list"] && [obj[@"data"][@"list"] isKindOfClass:[NSArray class]]) {
+            NSArray *arr = obj[@"data"][@"list"];
+            [self.recommendDataSource removeAllObjects];
+            for (NSDictionary *dict in arr) {
+                DiscListModel *model = [DiscListModel mj_objectWithKeyValues:dict context:nil];
+                [self.recommendDataSource addObject:model];
             }
-            dispatch_group_leave(group);
-        }];
-    });
+        }
+        dispatch_group_leave(group);
+    }];
 
     // 刷新列表
-    dispatch_group_notify(group, queue, ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-            if (![self.view.subviews containsObject:self.tableView]) {
-                [self.view addSubview:self.tableView];
-            }
-            [self.tableView reloadData];
-        });
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+        if (![self.view.subviews containsObject:self.tableView]) {
+            [self.view addSubview:self.tableView];
+        }
+        [self.tableView reloadData];
     });
 }
 

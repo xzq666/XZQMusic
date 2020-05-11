@@ -84,7 +84,7 @@
         tableViewTheme.backgroundColor = TableViewBacColor;
         tableViewTheme.viewForHeaderInSection = ^UIView * _Nonnull(UIView * _Nonnull headerView, NSUInteger section) {
             for (UIView *view in headerView.subviews) {
-                if([view isKindOfClass:[UILabel class]] && view.tag != 30001){
+                if([view isKindOfClass:[UILabel class]] && view.tag != 30001 && view.tag != 30002){
                     ((UILabel *)view).textColor = TableViewHeaderViewLabelTextColor;
                 }
             }
@@ -101,7 +101,7 @@
         tableViewTheme.cellForRowAtIndexPath = ^UITableViewCell * _Nonnull(UITableViewCell * _Nonnull cell, NSIndexPath * _Nonnull indexPath) {
             cell.backgroundColor = TableViewCellBacColor;
             for (UIView *view in cell.contentView.subviews) {
-                if([view isKindOfClass:[UILabel class]] && view.tag != 15000 && view.tag != 15001){
+                if([view isKindOfClass:[UILabel class]] && view.tag != 15000 && view.tag != 15001 && view.tag != 15002 && view.tag != 15003) {
                     ((UILabel *)view).textColor = TableViewCellLabelTextColor;
                 }
             }

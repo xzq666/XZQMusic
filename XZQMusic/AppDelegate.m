@@ -38,6 +38,9 @@
         
         self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         UINavigationController *rootNavgationController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+        // 去掉导航栏下边的默认线
+        [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
         self.window.rootViewController = rootNavgationController;
         [self.window makeKeyAndVisible];
     }

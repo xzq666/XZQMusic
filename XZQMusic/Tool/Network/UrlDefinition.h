@@ -22,5 +22,7 @@
 
 // 热门搜索关键字
 #define HotKey (@"https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg")
+// 关键字搜索
+#define Search (@"http://ustbhuangyi.com/music/api/search")
 
 #endif

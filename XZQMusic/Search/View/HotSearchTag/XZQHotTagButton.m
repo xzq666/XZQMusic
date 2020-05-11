@@ -24,7 +24,6 @@
     btn.backgroundColor = tag.bgColor;
     btn.contentEdgeInsets = tag.padding;
     btn.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    
     btn.userInteractionEnabled = tag.enable;
     if (tag.enable) {
         UIColor *highlightedBgColor = tag.highlightedBgColor ?: [self darkerColor:btn.backgroundColor];
@@ -45,7 +44,6 @@
 
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-
     return image;
 }
 

@@ -80,6 +80,9 @@
 		F0C81CC22463F48E00244FBD /* RecommendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC12463F48E00244FBD /* RecommendListCell.m */; };
 		F0C81CC72464008100244FBD /* RankListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC62464008100244FBD /* RankListModel.m */; };
 		F0C81CCA246404D900244FBD /* RankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC9246404D900244FBD /* RankListCell.m */; };
+		F0CDAA23246926300043EB31 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CDAA22246926300043EB31 /* SearchResultCell.m */; };
+		F0CDAA26246942470043EB31 /* QQMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CDAA25246942470043EB31 /* QQMusicModel.m */; };
+		F0D20FF0246697CE00F22A52 /* HistorySearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D20FEF246697CE00F22A52 /* HistorySearchCell.m */; };
 		F0D8DC40246527F400999AA9 /* XZQIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC3F246527F400999AA9 /* XZQIndexView.m */; };
 		F0D8DC4324652BF800999AA9 /* XZQSectionIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC4224652BF800999AA9 /* XZQSectionIndicatorView.m */; };
 		F0D8DC47246551B700999AA9 /* XZQSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC46246551B700999AA9 /* XZQSingleton.m */; };
@@ -238,6 +241,12 @@
 		F0C81CC62464008100244FBD /* RankListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankListModel.m; sourceTree = "<group>"; };
 		F0C81CC8246404D900244FBD /* RankListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RankListCell.h; path = ../RankListCell.h; sourceTree = "<group>"; };
 		F0C81CC9246404D900244FBD /* RankListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RankListCell.m; path = ../RankListCell.m; sourceTree = "<group>"; };
+		F0CDAA21246926300043EB31 /* SearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
+		F0CDAA22246926300043EB31 /* SearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
+		F0CDAA24246942470043EB31 /* QQMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMusicModel.h; sourceTree = "<group>"; };
+		F0CDAA25246942470043EB31 /* QQMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQMusicModel.m; sourceTree = "<group>"; };
+		F0D20FEE246697CE00F22A52 /* HistorySearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistorySearchCell.h; sourceTree = "<group>"; };
+		F0D20FEF246697CE00F22A52 /* HistorySearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistorySearchCell.m; sourceTree = "<group>"; };
 		F0D8DC3E246527F400999AA9 /* XZQIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQIndexView.h; sourceTree = "<group>"; };
 		F0D8DC3F246527F400999AA9 /* XZQIndexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQIndexView.m; sourceTree = "<group>"; };
 		F0D8DC4124652BF800999AA9 /* XZQSectionIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQSectionIndicatorView.h; sourceTree = "<group>"; };
@@ -756,8 +765,8 @@
 		F0B0E1EF2462AE8800E2FFC5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				F0D8DC4C2465689800999AA9 /* HotSearchTag */,
 				F0D8DC482465596500999AA9 /* Model */,
+				F0D20FEC24668E9800F22A52 /* View */,
 				F0B0E1F02462AEF800E2FFC5 /* Controller */,
 			);
 			path = Search;
@@ -825,6 +834,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F0D20FEC24668E9800F22A52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0D8DC4C2465689800999AA9 /* HotSearchTag */,
+				F0D20FED24668EA200F22A52 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0D20FED24668EA200F22A52 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0D20FEE246697CE00F22A52 /* HistorySearchCell.h */,
+				F0D20FEF246697CE00F22A52 /* HistorySearchCell.m */,
+				F0CDAA21246926300043EB31 /* SearchResultCell.h */,
+				F0CDAA22246926300043EB31 /* SearchResultCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F0D8DC3C246527AE00999AA9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -855,6 +884,8 @@
 		F0D8DC482465596500999AA9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0CDAA24246942470043EB31 /* QQMusicModel.h */,
+				F0CDAA25246942470043EB31 /* QQMusicModel.m */,
 				F0D8DC4924655D9E00999AA9 /* HotSearchModel.h */,
 				F0D8DC4A24655D9E00999AA9 /* HotSearchModel.m */,
 			);
@@ -994,6 +1025,7 @@
 				F0B0E1BF24628C2300E2FFC5 /* ZXCollectionViewTheme.m in Sources */,
 				F0C81CC72464008100244FBD /* RankListModel.m in Sources */,
 				F0B0E1CE24628C2300E2FFC5 /* UITextField+ZXTheme.m in Sources */,
+				F0CDAA26246942470043EB31 /* QQMusicModel.m in Sources */,
 				F0D8DC4B24655D9E00999AA9 /* HotSearchModel.m in Sources */,
 				F0B0E1D824628C2300E2FFC5 /* NetworkTool.m in Sources */,
 				F0D8DC5624656D1600999AA9 /* XZQHotTagButton.m in Sources */,
@@ -1059,10 +1091,12 @@
 				F0B0E1F62462AF2600E2FFC5 /* RecommendController.m in Sources */,
 				F0D8DC5324656AAB00999AA9 /* XZQHotTagView.m in Sources */,
 				F0B0E1E92462A30500E2FFC5 /* SwitchHeaderView.m in Sources */,
+				F0D20FF0246697CE00F22A52 /* HistorySearchCell.m in Sources */,
 				F0B00FD9246416D400C15D3D /* SingerListCell.m in Sources */,
 				F0B0E1B924628C2300E2FFC5 /* ZXViewTheme.m in Sources */,
 				F0B0E1AF24628C2300E2FFC5 /* ZXActivityIndicatorViewTheme.m in Sources */,
 				F0B0E1AD24628C2300E2FFC5 /* ZXSwitchTheme.m in Sources */,
+				F0CDAA23246926300043EB31 /* SearchResultCell.m in Sources */,
 				F0B0E1B024628C2300E2FFC5 /* UIStepper+ZXTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

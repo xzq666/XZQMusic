@@ -29,9 +29,7 @@
         _regularWidth = intrinsicWidth;
         if (intrinsicWidth == 0) {
             self.isIntrinsicWidth = NO;
-        }
-        else
-        {
+        } else {
             self.isIntrinsicWidth = YES;
         }
     }
@@ -74,7 +72,6 @@
             CGFloat width = self.isIntrinsicWidth?self.regularWidth:size.width;
             CGFloat height = self.isIntrinsicHeight?self.regularHeight:size.height;
             if (previousView) {
-//                CGFloat width = size.width;
                 currentX += itemSpacing;
                 if (currentX + width + rightPadding <= self.preferredMaxLayoutWidth) {
                     currentX += width;
@@ -150,7 +147,6 @@
             CGFloat width1 = self.isIntrinsicWidth?self.regularWidth:size.width;
             CGFloat height1 = self.isIntrinsicHeight?self.regularHeight:size.height;
             if (previousView) {
-//                CGFloat width = size.width;
                 currentX += itemSpacing;
                 if (currentX + width1 + rightPadding <= self.preferredMaxLayoutWidth) {
                     view.frame = CGRectMake(currentX, CGRectGetMinY(previousView.frame), width1, height1);
@@ -203,8 +199,8 @@
     if (index + 1 > self.tags.count) {
         [self addTag: tag];
     } else {
-        XZQHotTagButton *btn = [XZQHotTagButton buttonWithTag: tag];
-        [btn addTarget:self action:@selector(onTag:) forControlEvents: UIControlEventTouchUpInside];
+        XZQHotTagButton *btn = [XZQHotTagButton buttonWithTag:tag];
+        [btn addTarget:self action:@selector(onTag:) forControlEvents:UIControlEventTouchUpInside];
         [self insertSubview:btn atIndex: index];
         [self.tags insertObject:tag atIndex:index];
         self.didSetup = NO;
