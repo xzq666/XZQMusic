@@ -82,6 +82,10 @@
 		F0C81CCA246404D900244FBD /* RankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC9246404D900244FBD /* RankListCell.m */; };
 		F0CDAA23246926300043EB31 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CDAA22246926300043EB31 /* SearchResultCell.m */; };
 		F0CDAA26246942470043EB31 /* QQMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CDAA25246942470043EB31 /* QQMusicModel.m */; };
+		F0CDAA2C24694BAC0043EB31 /* XZQMusic_歌手.png in Resources */ = {isa = PBXBuildFile; fileRef = F0CDAA2824694BAC0043EB31 /* XZQMusic_歌手.png */; };
+		F0CDAA2D24694BAC0043EB31 /* XZQMusic_搜索.png in Resources */ = {isa = PBXBuildFile; fileRef = F0CDAA2924694BAC0043EB31 /* XZQMusic_搜索.png */; };
+		F0CDAA2E24694BAC0043EB31 /* XZQMusic_排行.png in Resources */ = {isa = PBXBuildFile; fileRef = F0CDAA2A24694BAC0043EB31 /* XZQMusic_排行.png */; };
+		F0CDAA2F24694BAC0043EB31 /* XZQMusic_推荐.png in Resources */ = {isa = PBXBuildFile; fileRef = F0CDAA2B24694BAC0043EB31 /* XZQMusic_推荐.png */; };
 		F0D20FF0246697CE00F22A52 /* HistorySearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D20FEF246697CE00F22A52 /* HistorySearchCell.m */; };
 		F0D8DC40246527F400999AA9 /* XZQIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC3F246527F400999AA9 /* XZQIndexView.m */; };
 		F0D8DC4324652BF800999AA9 /* XZQSectionIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D8DC4224652BF800999AA9 /* XZQSectionIndicatorView.m */; };
@@ -245,6 +249,10 @@
 		F0CDAA22246926300043EB31 /* SearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 		F0CDAA24246942470043EB31 /* QQMusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMusicModel.h; sourceTree = "<group>"; };
 		F0CDAA25246942470043EB31 /* QQMusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQMusicModel.m; sourceTree = "<group>"; };
+		F0CDAA2824694BAC0043EB31 /* XZQMusic_歌手.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "XZQMusic_歌手.png"; sourceTree = "<group>"; };
+		F0CDAA2924694BAC0043EB31 /* XZQMusic_搜索.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "XZQMusic_搜索.png"; sourceTree = "<group>"; };
+		F0CDAA2A24694BAC0043EB31 /* XZQMusic_排行.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "XZQMusic_排行.png"; sourceTree = "<group>"; };
+		F0CDAA2B24694BAC0043EB31 /* XZQMusic_推荐.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "XZQMusic_推荐.png"; sourceTree = "<group>"; };
 		F0D20FEE246697CE00F22A52 /* HistorySearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistorySearchCell.h; sourceTree = "<group>"; };
 		F0D20FEF246697CE00F22A52 /* HistorySearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistorySearchCell.m; sourceTree = "<group>"; };
 		F0D8DC3E246527F400999AA9 /* XZQIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQIndexView.h; sourceTree = "<group>"; };
@@ -317,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				F0B0E1DC246294CF00E2FFC5 /* README.md */,
+				F0CDAA2724694B860043EB31 /* 页面截图 */,
 				F0B0E10B2462878000E2FFC5 /* XZQMusic */,
 				F0B0E10A2462878000E2FFC5 /* Products */,
 				D300EDDF4FCB8661BA89A2C5 /* Pods */,
@@ -834,6 +843,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F0CDAA2724694B860043EB31 /* 页面截图 */ = {
+			isa = PBXGroup;
+			children = (
+				F0CDAA2824694BAC0043EB31 /* XZQMusic_歌手.png */,
+				F0CDAA2A24694BAC0043EB31 /* XZQMusic_排行.png */,
+				F0CDAA2924694BAC0043EB31 /* XZQMusic_搜索.png */,
+				F0CDAA2B24694BAC0043EB31 /* XZQMusic_推荐.png */,
+			);
+			path = "页面截图";
+			sourceTree = "<group>";
+		};
 		F0D20FEC24668E9800F22A52 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -965,9 +985,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0B0E11C2462878B00E2FFC5 /* LaunchScreen.storyboard in Resources */,
+				F0CDAA2C24694BAC0043EB31 /* XZQMusic_歌手.png in Resources */,
 				F0B0E1192462878B00E2FFC5 /* Assets.xcassets in Resources */,
 				F0B0E1DD246294CF00E2FFC5 /* README.md in Resources */,
 				F0B0E1172462878000E2FFC5 /* Main.storyboard in Resources */,
+				F0CDAA2F24694BAC0043EB31 /* XZQMusic_推荐.png in Resources */,
+				F0CDAA2E24694BAC0043EB31 /* XZQMusic_排行.png in Resources */,
+				F0CDAA2D24694BAC0043EB31 /* XZQMusic_搜索.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
