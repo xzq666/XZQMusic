@@ -76,6 +76,8 @@
 		F0B0E1F92462B00300E2FFC5 /* SingerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1F82462B00300E2FFC5 /* SingerController.m */; };
 		F0B0E1FC2462B01C00E2FFC5 /* RankController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1FB2462B01C00E2FFC5 /* RankController.m */; };
 		F0B0E1FF2462B03100E2FFC5 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1FE2462B03100E2FFC5 /* SearchController.m */; };
+		F0B31515246BDB8F00D5CA3B /* XZQWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B31514246BDB8F00D5CA3B /* XZQWebView.m */; };
+		F0B31518246BE01E00D5CA3B /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B31517246BE01E00D5CA3B /* WebController.m */; };
 		F0C81CBF2463E3E700244FBD /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CBE2463E3E700244FBD /* RecommendHeaderView.m */; };
 		F0C81CC22463F48E00244FBD /* RecommendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC12463F48E00244FBD /* RecommendListCell.m */; };
 		F0C81CC72464008100244FBD /* RankListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC62464008100244FBD /* RankListModel.m */; };
@@ -237,6 +239,10 @@
 		F0B0E1FB2462B01C00E2FFC5 /* RankController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankController.m; sourceTree = "<group>"; };
 		F0B0E1FD2462B03100E2FFC5 /* SearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
 		F0B0E1FE2462B03100E2FFC5 /* SearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
+		F0B31513246BDB8F00D5CA3B /* XZQWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQWebView.h; sourceTree = "<group>"; };
+		F0B31514246BDB8F00D5CA3B /* XZQWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQWebView.m; sourceTree = "<group>"; };
+		F0B31516246BE01E00D5CA3B /* WebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebController.h; sourceTree = "<group>"; };
+		F0B31517246BE01E00D5CA3B /* WebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebController.m; sourceTree = "<group>"; };
 		F0C81CBD2463E3E700244FBD /* RecommendHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderView.h; sourceTree = "<group>"; };
 		F0C81CBE2463E3E700244FBD /* RecommendHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
 		F0C81CC02463F48E00244FBD /* RecommendListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendListCell.h; sourceTree = "<group>"; };
@@ -742,6 +748,7 @@
 		F0B0E1E62462A29D00E2FFC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F0B31512246BDB7800D5CA3B /* WebView */,
 				F0C81CBC2463DBF400244FBD /* Cell */,
 				F0B0E1E72462A30500E2FFC5 /* SwitchHeaderView.h */,
 				F0B0E1E82462A30500E2FFC5 /* SwitchHeaderView.m */,
@@ -813,8 +820,19 @@
 			children = (
 				F0B0E1F42462AF2600E2FFC5 /* RecommendController.h */,
 				F0B0E1F52462AF2600E2FFC5 /* RecommendController.m */,
+				F0B31516246BE01E00D5CA3B /* WebController.h */,
+				F0B31517246BE01E00D5CA3B /* WebController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0B31512246BDB7800D5CA3B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F0B31513246BDB8F00D5CA3B /* XZQWebView.h */,
+				F0B31514246BDB8F00D5CA3B /* XZQWebView.m */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		F0C81CBC2463DBF400244FBD /* Cell */ = {
@@ -1105,6 +1123,7 @@
 				F0B0E1BC24628C2300E2FFC5 /* ZXTextViewTheme.m in Sources */,
 				F0B0E1B424628C2300E2FFC5 /* ZXButtonTheme.m in Sources */,
 				F0B0E1CF24628C2300E2FFC5 /* ZXTextFieldTheme.m in Sources */,
+				F0B31515246BDB8F00D5CA3B /* XZQWebView.m in Sources */,
 				F0B0E1CA24628C2300E2FFC5 /* ZXTheme.m in Sources */,
 				F0B0E1D924628C2300E2FFC5 /* CommonUtils.m in Sources */,
 				F0B0E1C524628C2300E2FFC5 /* ZXNavigationBarTheme.m in Sources */,
@@ -1119,6 +1138,7 @@
 				F0B00FD9246416D400C15D3D /* SingerListCell.m in Sources */,
 				F0B0E1B924628C2300E2FFC5 /* ZXViewTheme.m in Sources */,
 				F0B0E1AF24628C2300E2FFC5 /* ZXActivityIndicatorViewTheme.m in Sources */,
+				F0B31518246BE01E00D5CA3B /* WebController.m in Sources */,
 				F0B0E1AD24628C2300E2FFC5 /* ZXSwitchTheme.m in Sources */,
 				F0CDAA23246926300043EB31 /* SearchResultCell.m in Sources */,
 				F0B0E1B024628C2300E2FFC5 /* UIStepper+ZXTheme.m in Sources */,

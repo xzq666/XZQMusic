@@ -11,6 +11,7 @@
 #import "DiscListModel.h"
 #import "RecommendHeaderView.h"
 #import "RecommendListCell.h"
+#import "WebController.h"
 
 @interface RecommendController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -164,9 +165,17 @@
         recommendHeaderView.cycleScrollView.imageURLStringsGroup = imageUrls;
     }
     recommendHeaderView.block = ^(NSInteger index) {
-        NSLog(@"点击了第%zd张图片", index);
+        [self gotoWebController:index];
     };
     return headView;
+}
+
+- (void)gotoWebController:(NSInteger)index {
+    WebController *vc = [[WebController alloc] init];
+    TopBannerModel *model = self.bannerDataSource[index];
+    NSLog(@"url-->%@", model.linkUrl);
+    vc.url = model.linkUrl;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
