@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *xsrfToken;
 @property(nonatomic,copy) NSString *csrf;
 
+@property(nonatomic,strong) NSMutableArray *currentPlaySongs;  // 当前播放音乐列表
+
 + (XZQSingleton *)sharedInstance;
 
 @end

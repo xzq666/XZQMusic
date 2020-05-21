@@ -30,12 +30,6 @@ static NSUInteger const XZQErrorViewTag = 1024;
         Method oldMethod = class_getInstanceMethod([self class], @selector(reloadData));
         Method newMethod = class_getInstanceMethod([self class], @selector(xzq_reloadData));
         method_exchangeImplementations(oldMethod, newMethod);
-//        BOOL needAddMethod = class_addMethod([self class], @selector(reloadData), method_getImplementation(newMethod), method_getTypeEncoding(newMethod));
-//        if (needAddMethod) {
-//            class_replaceMethod([self class], @selector(xzq_reloadData), method_getImplementation(oldMethod), method_getTypeEncoding(oldMethod));
-//        } else {
-//            method_exchangeImplementations(oldMethod, newMethod);
-//        }
     });
 }
 
@@ -79,7 +73,7 @@ static NSUInteger const XZQErrorViewTag = 1024;
 - (void)showErrorView {
     XZQErrorView *errorView = [self isExistErrorView];
     if (!errorView) {
-        errorView = [[XZQErrorView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) errorImageUrl:@"https://pic640.weishi.qq.com/879a31aac8a9404b8a8242104e2dcover.jpg" errorTip:@"暂无数据" operateText:@"" errorOperateBlock:^{
+        errorView = [[XZQErrorView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) errorImageUrl:@"default" errorTip:@"暂无数据" operateText:@"" errorOperateBlock:^{
         }];
         errorView.tag = XZQErrorViewTag;
         [self addSubview:errorView];

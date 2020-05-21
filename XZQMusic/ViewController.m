@@ -12,6 +12,7 @@
 #import "SingerController.h"
 #import "RankController.h"
 #import "SearchController.h"
+#import "MineController.h"
 
 @interface ViewController ()
 
@@ -43,6 +44,12 @@
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.text = @"XZQ音乐";
     self.navigationItem.titleView = titleLabel;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"mine"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(junpToMine)];
+}
+
+- (void)junpToMine {
+    MineController *vc = [[MineController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)setupUI {

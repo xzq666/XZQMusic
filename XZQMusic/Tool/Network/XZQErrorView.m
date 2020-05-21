@@ -48,7 +48,7 @@
         if (operateText && operateText.length > 0) {
             height += 40;
         }
-        self.tipImage = [[UIImageView alloc] initWithFrame:CGRectMake(viewWidth * 0.25, (viewHeight - viewWidth * 0.5 - height) / 2, viewWidth * 0.5, viewWidth * 0.5)];
+        self.tipImage = [[UIImageView alloc] initWithFrame:CGRectMake(viewWidth * 0.35, (viewHeight - viewWidth * 0.35 - height) / 2, viewWidth * 0.3, viewWidth * 0.3)];
         [self addSubview:self.tipImage];
         if ([imageUrl hasPrefix:@"http"]) {
             [self.tipImage sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"placeholder"]];

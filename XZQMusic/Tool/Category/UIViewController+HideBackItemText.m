@@ -30,7 +30,6 @@
 }
 
 - (void)viewWillAppearNew:(BOOL)animated {
-    [self viewWillAppearNew:animated];
     UIScrollView *scrollView = nil;
     for (UIView *view in self.view.subviews) {
         if ([view isKindOfClass:[UITableView class]] || [view isKindOfClass:[UICollectionView class]]) {
@@ -48,6 +47,7 @@
             scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
         }
     }
+    [self viewWillAppearNew:animated];
 }
 
 @end

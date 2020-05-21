@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B9C4CF30CAB392A7BAA7EAE3 /* libPods-XZQMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3262D972049066D9EF1EA1CF /* libPods-XZQMusic.a */; };
+		F04E2D2824751AE700C46061 /* RecommandDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F04E2D2724751AE700C46061 /* RecommandDetailModel.m */; };
+		F04E2D2B247523B900C46061 /* RecommendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F04E2D2A247523B900C46061 /* RecommendDetailCell.m */; };
+		F04E2D2E24752D2500C46061 /* SingerDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04E2D2D24752D2500C46061 /* SingerDetailController.m */; };
+		F04E2D31247530F700C46061 /* SingerDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F04E2D30247530F700C46061 /* SingerDetailModel.m */; };
+		F04E2D342475363000C46061 /* RankDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04E2D332475363000C46061 /* RankDetailController.m */; };
 		F0B00FD32464140D00C15D3D /* SingerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B00FD22464140D00C15D3D /* SingerListModel.m */; };
 		F0B00FD62464161600C15D3D /* UIImage+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B00FD52464161600C15D3D /* UIImage+Expanded.m */; };
 		F0B00FD9246416D400C15D3D /* SingerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B00FD8246416D400C15D3D /* SingerListCell.m */; };
@@ -78,6 +83,11 @@
 		F0B0E1FF2462B03100E2FFC5 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1FE2462B03100E2FFC5 /* SearchController.m */; };
 		F0B31515246BDB8F00D5CA3B /* XZQWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B31514246BDB8F00D5CA3B /* XZQWebView.m */; };
 		F0B31518246BE01E00D5CA3B /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B31517246BE01E00D5CA3B /* WebController.m */; };
+		F0BF29C7246CF6F7005118E0 /* RecommendDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF29C6246CF6F7005118E0 /* RecommendDetailController.m */; };
+		F0C2480E247650E100BAC780 /* RankDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C2480D247650E100BAC780 /* RankDetailModel.m */; };
+		F0C248112476565F00BAC780 /* RankDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C248102476565F00BAC780 /* RankDetailCell.m */; };
+		F0C248162476605800BAC780 /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C248152476605800BAC780 /* MineController.m */; };
+		F0C2481B2476867100BAC780 /* XZQCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C2481A2476867100BAC780 /* XZQCircleProgressView.m */; };
 		F0C81CBF2463E3E700244FBD /* RecommendHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CBE2463E3E700244FBD /* RecommendHeaderView.m */; };
 		F0C81CC22463F48E00244FBD /* RecommendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC12463F48E00244FBD /* RecommendListCell.m */; };
 		F0C81CC72464008100244FBD /* RankListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C81CC62464008100244FBD /* RankListModel.m */; };
@@ -102,6 +112,16 @@
 		0831805EC99AC6D2FC626227 /* Pods-XZQMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZQMusic.debug.xcconfig"; path = "Target Support Files/Pods-XZQMusic/Pods-XZQMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		1819C1ED2214849D91B506EE /* Pods-XZQMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XZQMusic.release.xcconfig"; path = "Target Support Files/Pods-XZQMusic/Pods-XZQMusic.release.xcconfig"; sourceTree = "<group>"; };
 		3262D972049066D9EF1EA1CF /* libPods-XZQMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XZQMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F04E2D2624751AE700C46061 /* RecommandDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommandDetailModel.h; sourceTree = "<group>"; };
+		F04E2D2724751AE700C46061 /* RecommandDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommandDetailModel.m; sourceTree = "<group>"; };
+		F04E2D29247523B900C46061 /* RecommendDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendDetailCell.h; sourceTree = "<group>"; };
+		F04E2D2A247523B900C46061 /* RecommendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendDetailCell.m; sourceTree = "<group>"; };
+		F04E2D2C24752D2500C46061 /* SingerDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingerDetailController.h; sourceTree = "<group>"; };
+		F04E2D2D24752D2500C46061 /* SingerDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingerDetailController.m; sourceTree = "<group>"; };
+		F04E2D2F247530F700C46061 /* SingerDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingerDetailModel.h; sourceTree = "<group>"; };
+		F04E2D30247530F700C46061 /* SingerDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingerDetailModel.m; sourceTree = "<group>"; };
+		F04E2D322475363000C46061 /* RankDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankDetailController.h; sourceTree = "<group>"; };
+		F04E2D332475363000C46061 /* RankDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankDetailController.m; sourceTree = "<group>"; };
 		F0B00FD12464140D00C15D3D /* SingerListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingerListModel.h; sourceTree = "<group>"; };
 		F0B00FD22464140D00C15D3D /* SingerListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingerListModel.m; sourceTree = "<group>"; };
 		F0B00FD42464161600C15D3D /* UIImage+Expanded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Expanded.h"; sourceTree = "<group>"; };
@@ -243,6 +263,16 @@
 		F0B31514246BDB8F00D5CA3B /* XZQWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQWebView.m; sourceTree = "<group>"; };
 		F0B31516246BE01E00D5CA3B /* WebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebController.h; sourceTree = "<group>"; };
 		F0B31517246BE01E00D5CA3B /* WebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebController.m; sourceTree = "<group>"; };
+		F0BF29C5246CF6F7005118E0 /* RecommendDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendDetailController.h; sourceTree = "<group>"; };
+		F0BF29C6246CF6F7005118E0 /* RecommendDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendDetailController.m; sourceTree = "<group>"; };
+		F0C2480C247650E100BAC780 /* RankDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankDetailModel.h; sourceTree = "<group>"; };
+		F0C2480D247650E100BAC780 /* RankDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankDetailModel.m; sourceTree = "<group>"; };
+		F0C2480F2476565F00BAC780 /* RankDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankDetailCell.h; sourceTree = "<group>"; };
+		F0C248102476565F00BAC780 /* RankDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RankDetailCell.m; sourceTree = "<group>"; };
+		F0C248142476605800BAC780 /* MineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
+		F0C248152476605800BAC780 /* MineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
+		F0C248192476867100BAC780 /* XZQCircleProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQCircleProgressView.h; sourceTree = "<group>"; };
+		F0C2481A2476867100BAC780 /* XZQCircleProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQCircleProgressView.m; sourceTree = "<group>"; };
 		F0C81CBD2463E3E700244FBD /* RecommendHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendHeaderView.h; sourceTree = "<group>"; };
 		F0C81CBE2463E3E700244FBD /* RecommendHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendHeaderView.m; sourceTree = "<group>"; };
 		F0C81CC02463F48E00244FBD /* RecommendListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendListCell.h; sourceTree = "<group>"; };
@@ -323,6 +353,8 @@
 			children = (
 				F0B00FD12464140D00C15D3D /* SingerListModel.h */,
 				F0B00FD22464140D00C15D3D /* SingerListModel.m */,
+				F04E2D2F247530F700C46061 /* SingerDetailModel.h */,
+				F04E2D30247530F700C46061 /* SingerDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,10 +382,12 @@
 		F0B0E10B2462878000E2FFC5 /* XZQMusic */ = {
 			isa = PBXGroup;
 			children = (
+				F0C248172476865000BAC780 /* MusicPlay */,
 				F0B0E1DE246299A000E2FFC5 /* Recommend */,
 				F0B0E1ED2462AE6C00E2FFC5 /* Singer */,
 				F0B0E1EE2462AE7B00E2FFC5 /* Rank */,
 				F0B0E1EF2462AE8800E2FFC5 /* Search */,
+				F0C2481224765F5200BAC780 /* Mine */,
 				F0B0E12524628C2300E2FFC5 /* OtherFramework */,
 				F0B0E19824628C2300E2FFC5 /* Tool */,
 				F0B0E10C2462878000E2FFC5 /* AppDelegate.h */,
@@ -741,6 +775,8 @@
 				F0B0E1E1246299F200E2FFC5 /* TopBannerModel.m */,
 				F0B0E1E324629DA200E2FFC5 /* DiscListModel.h */,
 				F0B0E1E424629DA200E2FFC5 /* DiscListModel.m */,
+				F04E2D2624751AE700C46061 /* RecommandDetailModel.h */,
+				F04E2D2724751AE700C46061 /* RecommandDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -802,6 +838,8 @@
 			children = (
 				F0B0E1FA2462B01C00E2FFC5 /* RankController.h */,
 				F0B0E1FB2462B01C00E2FFC5 /* RankController.m */,
+				F04E2D322475363000C46061 /* RankDetailController.h */,
+				F04E2D332475363000C46061 /* RankDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -811,6 +849,8 @@
 			children = (
 				F0B0E1F72462B00300E2FFC5 /* SingerController.h */,
 				F0B0E1F82462B00300E2FFC5 /* SingerController.m */,
+				F04E2D2C24752D2500C46061 /* SingerDetailController.h */,
+				F04E2D2D24752D2500C46061 /* SingerDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -822,6 +862,8 @@
 				F0B0E1F52462AF2600E2FFC5 /* RecommendController.m */,
 				F0B31516246BE01E00D5CA3B /* WebController.h */,
 				F0B31517246BE01E00D5CA3B /* WebController.m */,
+				F0BF29C5246CF6F7005118E0 /* RecommendDetailController.h */,
+				F0BF29C6246CF6F7005118E0 /* RecommendDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -835,11 +877,47 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		F0C2481224765F5200BAC780 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				F0C2481324765F5700BAC780 /* Controller */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		F0C2481324765F5700BAC780 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0C248142476605800BAC780 /* MineController.h */,
+				F0C248152476605800BAC780 /* MineController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0C248172476865000BAC780 /* MusicPlay */ = {
+			isa = PBXGroup;
+			children = (
+				F0C248182476865A00BAC780 /* View */,
+			);
+			path = MusicPlay;
+			sourceTree = "<group>";
+		};
+		F0C248182476865A00BAC780 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0C248192476867100BAC780 /* XZQCircleProgressView.h */,
+				F0C2481A2476867100BAC780 /* XZQCircleProgressView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F0C81CBC2463DBF400244FBD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				F0C81CC02463F48E00244FBD /* RecommendListCell.h */,
 				F0C81CC12463F48E00244FBD /* RecommendListCell.m */,
+				F04E2D29247523B900C46061 /* RecommendDetailCell.h */,
+				F04E2D2A247523B900C46061 /* RecommendDetailCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -857,6 +935,8 @@
 			children = (
 				F0C81CC52464008100244FBD /* RankListModel.h */,
 				F0C81CC62464008100244FBD /* RankListModel.m */,
+				F0C2480C247650E100BAC780 /* RankDetailModel.h */,
+				F0C2480D247650E100BAC780 /* RankDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -906,6 +986,8 @@
 			children = (
 				F0C81CC8246404D900244FBD /* RankListCell.h */,
 				F0C81CC9246404D900244FBD /* RankListCell.m */,
+				F0C2480F2476565F00BAC780 /* RankDetailCell.h */,
+				F0C248102476565F00BAC780 /* RankDetailCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1076,6 +1158,7 @@
 				F0B0E1AA24628C2300E2FFC5 /* ZXPageControlTheme.m in Sources */,
 				F0B0E1142462878000E2FFC5 /* ViewController.m in Sources */,
 				F0B0E1E524629DA200E2FFC5 /* DiscListModel.m in Sources */,
+				F04E2D2E24752D2500C46061 /* SingerDetailController.m in Sources */,
 				F0D8DC40246527F400999AA9 /* XZQIndexView.m in Sources */,
 				F0B0E1C324628C2300E2FFC5 /* UIImageView+ZXTheme.m in Sources */,
 				F0B0E1E2246299F200E2FFC5 /* TopBannerModel.m in Sources */,
@@ -1092,10 +1175,13 @@
 				F0B0E1AB24628C2300E2FFC5 /* UIPageControl+ZXTheme.m in Sources */,
 				F0B0E10E2462878000E2FFC5 /* AppDelegate.m in Sources */,
 				F0B0E11F2462878B00E2FFC5 /* main.m in Sources */,
+				F0C2481B2476867100BAC780 /* XZQCircleProgressView.m in Sources */,
 				F0B0E1CB24628C2300E2FFC5 /* ZXTabBarTheme.m in Sources */,
 				F0B0E1D624628C2300E2FFC5 /* NSError+XZQError.m in Sources */,
 				F0D8DC4324652BF800999AA9 /* XZQSectionIndicatorView.m in Sources */,
+				F04E2D342475363000C46061 /* RankDetailController.m in Sources */,
 				F0C81CBF2463E3E700244FBD /* RecommendHeaderView.m in Sources */,
+				F04E2D31247530F700C46061 /* SingerDetailModel.m in Sources */,
 				F0B0E1B824628C2300E2FFC5 /* UIView+ZXTheme.m in Sources */,
 				F0B0E1BB24628C2300E2FFC5 /* UITabBarItem+ZXTheme.m in Sources */,
 				F0B0E1C924628C2300E2FFC5 /* UIProgressView+ZXTheme.m in Sources */,
@@ -1121,22 +1207,28 @@
 				F0B0E1112462878000E2FFC5 /* SceneDelegate.m in Sources */,
 				F0D8DC50246568D400999AA9 /* XZQHotTag.m in Sources */,
 				F0B0E1BC24628C2300E2FFC5 /* ZXTextViewTheme.m in Sources */,
+				F0C248162476605800BAC780 /* MineController.m in Sources */,
 				F0B0E1B424628C2300E2FFC5 /* ZXButtonTheme.m in Sources */,
 				F0B0E1CF24628C2300E2FFC5 /* ZXTextFieldTheme.m in Sources */,
+				F04E2D2B247523B900C46061 /* RecommendDetailCell.m in Sources */,
 				F0B31515246BDB8F00D5CA3B /* XZQWebView.m in Sources */,
 				F0B0E1CA24628C2300E2FFC5 /* ZXTheme.m in Sources */,
 				F0B0E1D924628C2300E2FFC5 /* CommonUtils.m in Sources */,
 				F0B0E1C524628C2300E2FFC5 /* ZXNavigationBarTheme.m in Sources */,
 				F0B0E1A924628C2300E2FFC5 /* UIImage+ZXTheme.m in Sources */,
+				F0BF29C7246CF6F7005118E0 /* RecommendDetailController.m in Sources */,
 				F0B0E1FC2462B01C00E2FFC5 /* RankController.m in Sources */,
 				F0B0E1D724628C2300E2FFC5 /* XZQErrorView.m in Sources */,
 				F0B0E1F92462B00300E2FFC5 /* SingerController.m in Sources */,
 				F0B0E1F62462AF2600E2FFC5 /* RecommendController.m in Sources */,
 				F0D8DC5324656AAB00999AA9 /* XZQHotTagView.m in Sources */,
 				F0B0E1E92462A30500E2FFC5 /* SwitchHeaderView.m in Sources */,
+				F04E2D2824751AE700C46061 /* RecommandDetailModel.m in Sources */,
+				F0C2480E247650E100BAC780 /* RankDetailModel.m in Sources */,
 				F0D20FF0246697CE00F22A52 /* HistorySearchCell.m in Sources */,
 				F0B00FD9246416D400C15D3D /* SingerListCell.m in Sources */,
 				F0B0E1B924628C2300E2FFC5 /* ZXViewTheme.m in Sources */,
+				F0C248112476565F00BAC780 /* RankDetailCell.m in Sources */,
 				F0B0E1AF24628C2300E2FFC5 /* ZXActivityIndicatorViewTheme.m in Sources */,
 				F0B31518246BE01E00D5CA3B /* WebController.m in Sources */,
 				F0B0E1AD24628C2300E2FFC5 /* ZXSwitchTheme.m in Sources */,

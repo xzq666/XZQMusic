@@ -33,6 +33,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)convert2JSONWithDictionary:(NSDictionary *)dic;
 
+/*
+ 设置图片透明度
+ */
++ (UIImage *)image:(UIImage*)image setAlpha:(CGFloat)alpha;
+
+/*
+ 设置图片毛玻璃效果
+ */
++ (UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur;
+
 @end
 
 NS_ASSUME_NONNULL_END

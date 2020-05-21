@@ -13,5 +13,7 @@ pod 'SVProgressHUD'
 pod 'GPUImage'
 pod 'IQKeyboardManager'
 pod 'SDCycleScrollView'
+pod 'MLeaksFinder'
+pod 'FBRetainCycleDetector'
 
 end

@@ -10,6 +10,7 @@
 #import "SwitchHeaderView.h"
 #import "RecommendHeaderView.h"
 #import "XZQHotTagButton.h"
+#import <Accelerate/Accelerate.h>
 
 #pragma mark 获取Tabbar的背景色
 #define TabbarTintColor ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor])
@@ -81,7 +82,7 @@
     [ZXTheme defaultTheme].zx_tableViewThemeBlock = ^ZXTableViewTheme * _Nonnull(UITableView * _Nonnull tableView) {
         ZXTableViewTheme *tableViewTheme = [[ZXTableViewTheme alloc]init];
         tableViewTheme.separatorStyle = UITableViewCellSeparatorStyleNone;
-        tableViewTheme.backgroundColor = TableViewBacColor;
+//        tableViewTheme.backgroundColor = TableViewBacColor;
         tableViewTheme.viewForHeaderInSection = ^UIView * _Nonnull(UIView * _Nonnull headerView, NSUInteger section) {
             for (UIView *view in headerView.subviews) {
                 if([view isKindOfClass:[UILabel class]] && view.tag != 30001 && view.tag != 30002){
@@ -101,7 +102,7 @@
         tableViewTheme.cellForRowAtIndexPath = ^UITableViewCell * _Nonnull(UITableViewCell * _Nonnull cell, NSIndexPath * _Nonnull indexPath) {
             cell.backgroundColor = TableViewCellBacColor;
             for (UIView *view in cell.contentView.subviews) {
-                if([view isKindOfClass:[UILabel class]] && view.tag != 15000 && view.tag != 15001 && view.tag != 15002 && view.tag != 15003) {
+                if([view isKindOfClass:[UILabel class]] && view.tag != 15000 && view.tag != 15001 && view.tag != 15002 && view.tag != 15003 && view.tag != 15004 && view.tag != 15005 && view.tag != 15006 && view.tag != 15007 && view.tag != 15008) {
                     ((UILabel *)view).textColor = TableViewCellLabelTextColor;
                 }
             }
@@ -180,6 +181,62 @@
         jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
     }
     return jsonString;
+}
+
++ (UIImage *)image:(UIImage*)image setAlpha:(CGFloat)alpha {
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, 0.0f);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGRect area = CGRectMake(0, 0, image.size.width, image.size.height);
+    CGContextScaleCTM(ctx, 1, -1);
+    CGContextTranslateCTM(ctx, 0, -area.size.height);
+    CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
+    CGContextSetAlpha(ctx, alpha);
+    CGContextDrawImage(ctx, area, image.CGImage);
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
++ (UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur {
+     if (blur < 0.f || blur > 1.f) {
+        blur = 0.5f;
+     }
+     int boxSize = (int)(blur * 40);
+     boxSize = boxSize - (boxSize % 2) + 1;
+     CGImageRef img = image.CGImage;
+     vImage_Buffer inBuffer, outBuffer;
+     vImage_Error error;
+     void *pixelBuffer;
+     //从CGImage中获取数据
+     CGDataProviderRef inProvider = CGImageGetDataProvider(img);
+     CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
+     //设置从CGImage获取对象的属性
+     inBuffer.width = CGImageGetWidth(img);
+     inBuffer.height = CGImageGetHeight(img);
+     inBuffer.rowBytes = CGImageGetBytesPerRow(img);
+     inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
+     pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
+     if(pixelBuffer == NULL)
+         NSLog(@"No pixelbuffer");
+     outBuffer.data = pixelBuffer;
+     outBuffer.width = CGImageGetWidth(img);
+     outBuffer.height = CGImageGetHeight(img);
+     outBuffer.rowBytes = CGImageGetBytesPerRow(img);
+     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
+     if (error) {
+           NSLog(@"error from convolution %ld", error);
+     }
+     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+     CGContextRef ctx = CGBitmapContextCreate(outBuffer.data, outBuffer.width, outBuffer.height, 8, outBuffer.rowBytes, colorSpace, kCGImageAlphaNoneSkipLast);
+     CGImageRef imageRef = CGBitmapContextCreateImage (ctx);
+     UIImage *returnImage = [UIImage imageWithCGImage:imageRef];
+     //clean up CGContextRelease(ctx);
+     CGColorSpaceRelease(colorSpace);
+     free(pixelBuffer);
+     CFRelease(inBitmapData);
+     CGColorSpaceRelease(colorSpace);
+     CGImageRelease(imageRef);
+     return returnImage;
 }
 
 @end

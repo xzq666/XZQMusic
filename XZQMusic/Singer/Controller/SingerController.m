@@ -10,6 +10,7 @@
 #import "SingerListModel.h"
 #import "SingerListCell.h"
 #import "XZQIndexView.h"
+#import "SingerDetailController.h"
 
 @interface CategorySingers : NSObject
 
@@ -37,6 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = CommonBgColor;
     
     self.isSearchMode = NO;
     self.singerDataSource = [[NSMutableArray alloc] init];
@@ -122,6 +124,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight-SafeAreaTopHeight-45) style:UITableViewStylePlain];
+        _tableView.backgroundColor = ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor]);
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 25)];
@@ -218,6 +221,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    SingerDetailController *vc = [[SingerDetailController alloc] init];
+    CategorySingers *category = self.singerDataSource[indexPath.section];
+    SingerListModel *model = category.singers[indexPath.row];
+    vc.naviTitle = model.Fsinger_name;
+    vc.singermid = model.Fsinger_mid;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - IndexView

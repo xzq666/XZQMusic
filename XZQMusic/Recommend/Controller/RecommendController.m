@@ -12,6 +12,7 @@
 #import "RecommendHeaderView.h"
 #import "RecommendListCell.h"
 #import "WebController.h"
+#import "RecommendDetailController.h"
 
 @interface RecommendController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -26,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = CommonBgColor;
     self.bannerDataSource = [[NSMutableArray alloc] init];
     self.recommendDataSource = [[NSMutableArray alloc] init];
     
@@ -115,6 +116,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight-SafeAreaTopHeight-45) style:UITableViewStyleGrouped];
+        _tableView.backgroundColor = ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor]);
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
@@ -173,7 +175,6 @@
 - (void)gotoWebController:(NSInteger)index {
     WebController *vc = [[WebController alloc] init];
     TopBannerModel *model = self.bannerDataSource[index];
-    NSLog(@"url-->%@", model.linkUrl);
     vc.url = model.linkUrl;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -192,6 +193,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    RecommendDetailController *vc = [[RecommendDetailController alloc] init];
+    DiscListModel *model = self.recommendDataSource[indexPath.row];
+    vc.naviTitle = model.dissname;
+    vc.disstid = model.dissid;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

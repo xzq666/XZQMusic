@@ -9,6 +9,7 @@
 #import "RankController.h"
 #import "RankListModel.h"
 #import "RankListCell.h"
+#import "RankDetailController.h"
 
 @interface RankController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -22,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = CommonBgColor;
     
     self.rankDataSource = [NSMutableArray array];
     
@@ -63,6 +65,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight-SafeAreaTopHeight-45) style:UITableViewStyleGrouped];
+        _tableView.backgroundColor = CommonBgColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
@@ -113,6 +116,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    RankListModel *model = self.rankDataSource[indexPath.row];
+    RankDetailController *vc = [[RankDetailController alloc] init];
+    vc.naviTitle = model.topTitle;
+    vc.picUrl = model.picUrl;
+    vc.topId = model.topId;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

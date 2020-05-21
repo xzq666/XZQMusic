@@ -131,6 +131,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 70, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-70-44) style:UITableViewStyleGrouped];
+        _tableView.backgroundColor = ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor]);
         _tableView.alwaysBounceVertical = NO;
         _tableView.delegate = self;
         _tableView.dataSource = self;
