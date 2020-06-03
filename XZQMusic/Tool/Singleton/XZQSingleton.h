@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy) NSString *csrf;
 
 @property(nonatomic,strong) NSMutableArray *currentPlaySongs;  // 当前播放音乐列表
+@property(nonatomic,assign) BOOL isPlayMusic;  // 当前是否已有音乐播放
 
 + (XZQSingleton *)sharedInstance;
 

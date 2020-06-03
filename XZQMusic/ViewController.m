@@ -13,6 +13,7 @@
 #import "RankController.h"
 #import "SearchController.h"
 #import "MineController.h"
+#import "MusicPlayController.h"
 
 @interface ViewController ()
 
@@ -26,6 +27,8 @@
 @property (nonatomic, strong) UIViewController *currentController;  // 当前显示的控制器
 @property(nonatomic,strong) UIView *contentView;  // 承载控制器的容器
 
+@property(nonatomic,strong) XZQBottomPlayView *bottomView;
+
 @end
 
 @implementation ViewController
@@ -36,6 +39,8 @@
     [self setupNavigationBar];
     // 顶部页签视图与控制器承载视图
     [self setupUI];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playMusic:) name:@"playMusic" object:nil];
 }
 
 - (void)setupNavigationBar {
@@ -151,6 +156,66 @@
         [vc willMoveToParentViewController:nil];
         [vc removeFromParentViewController];
     }
+}
+
+- (void)playMusic:(NSNotification *)notification {
+    [self getLyric];
+    NSDictionary *infoDic = [notification object];
+    if (infoDic[@"coverUrl"] && infoDic[@"songName"] && infoDic[@"singerName"]) {
+        if ([XZQSingleton sharedInstance].isPlayMusic) {
+            [self.bottomView playWithCoverUrl:infoDic[@"coverUrl"] songName:infoDic[@"songName"] singerName:infoDic[@"singerName"]];
+        } else {
+            self.bottomView = [[XZQBottomPlayView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-SafeAreaBottomHeight-75, SCREEN_WIDTH, 75) coverUrl:infoDic[@"coverUrl"] songName:infoDic[@"songName"] singerName:infoDic[@"singerName"]];
+            UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+            [window addSubview:self.bottomView];
+            [XZQSingleton sharedInstance].isPlayMusic = YES;
+        }
+    }
+    [self.bottomView setHidden:YES];
+    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
+    MusicPlayController *vc = [[MusicPlayController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    vc.backBlock = ^{
+        [self.bottomView setHidden:NO];
+    };
+    [window.rootViewController presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
+
+- (void)getLyric {
+    NSDictionary *params = @{
+        @"g_tk": GTK,
+        @"inCharset": @"utf-8",
+        @"outCharset": @"utf-8",
+        @"notice": @0,
+        @"format": @"json",
+        @"songmid": @"001PLl3C4gPSCI",
+        @"hostUin": @0,
+        @"needNewCode": @0,
+        @"categoryId": @"10000000",
+        @"pcachetime": @"1591067809246"
+    };
+    [NetworkTool getUrl:Lyric withParams:params backInfoWhenErrorBlock:^(id  _Nonnull obj, NSError * _Nonnull error) {
+        if (obj && obj[@"retcode"] && [obj[@"retcode"] integerValue]==0 && obj[@"lyric"]) {
+            NSString *lyric = [CommonUtils base64Decode:obj[@"lyric"]];
+            NSLog(@"lyric-->\n%@", lyric);
+            XZQLyricsAnalysis *model = [[XZQLyricsAnalysis alloc] init];
+            [model lyricsAnalysisWithString:lyric];
+            NSLog(@"ar = %@", model.ar);
+            NSLog(@"ti = %@", model.ti);
+            NSLog(@"by = %@", model.by);
+            NSLog(@"al = %@", model.al);
+            NSLog(@"t_time = %@", model.t_time);
+            NSLog(@"lrcArrayStr = %@", model.lrcArrayStr);
+            NSLog(@"lrcArrayTime = %@", model.lrcArrayTime);
+        }
+    }];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"playMusic" object:nil];
 }
 
 @end

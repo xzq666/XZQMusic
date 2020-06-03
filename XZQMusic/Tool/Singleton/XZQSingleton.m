@@ -17,6 +17,7 @@ static XZQSingleton *instance;
     self = [super init];
     if (self) {
         _currentPlaySongs = [NSMutableArray array];
+        _isPlayMusic = NO;
     }
     return self;
 }

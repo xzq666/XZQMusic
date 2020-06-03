@@ -111,6 +111,11 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight) style:UITableViewStylePlain];
+        if ([XZQSingleton sharedInstance].isPlayMusic) {
+            tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight-75);
+        } else {
+            tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight);
+        }
         tableView.backgroundColor = [UIColor hexStringToColor:@"#000000" andAlpha:0.0];
         tableView.delegate = self;
         tableView.dataSource = self;
@@ -157,6 +162,15 @@
         CGFloat f = totalOffset / (SCREEN_WIDTH);
         // 拉伸后的图片的frame应该是同比例缩放
         self.headerImage.frame = CGRectMake(- (SCREEN_WIDTH * f - SCREEN_WIDTH) / 2, SafeAreaTopHeight, SCREEN_WIDTH * f, totalOffset);
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([XZQSingleton sharedInstance].isPlayMusic && [self.view.subviews containsObject:self.tableView] && self.tableView.frame.size.height == SCREEN_HEIGHT-SafeAreaBottomHeight) {
+        self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight-75);
+    } else if (![XZQSingleton sharedInstance].isPlayMusic && [self.view.subviews containsObject:self.tableView] && self.tableView.frame.size.height == SCREEN_HEIGHT-SafeAreaBottomHeight-75) {
+        self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight);
     }
 }
 

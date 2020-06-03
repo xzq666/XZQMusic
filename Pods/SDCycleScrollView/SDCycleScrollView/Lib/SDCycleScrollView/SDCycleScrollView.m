@@ -75,7 +75,7 @@ NSString * const ID = @"SDCycleScrollViewCell";
 - (void)initialization
 {
     _pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    _autoScrollTimeInterval = 2.0;
+    _autoScrollTimeInterval = 3.0;
     _titleLabelTextColor = [UIColor whiteColor];
     _titleLabelTextFont= [UIFont systemFontOfSize:14];
     _titleLabelBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
@@ -447,6 +447,22 @@ NSString * const ID = @"SDCycleScrollViewCell";
         return;
     }
     [_mainView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:targetIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+//    if (@available(iOS 10.0, *)) {
+//        __weak typeof(self) weakSelf = self;
+//        [self invalidateTimer2];
+//        __block CGPoint scrollingPoint = weakSelf.mainView.contentOffset;
+//        CGPoint endPoint = CGPointMake(targetIndex * [UIScreen mainScreen].bounds.size.width, 0);
+//        self.timer2 = [NSTimer timerWithTimeInterval:(weakSelf.autoScrollTimeInterval-1)/[UIScreen mainScreen].bounds.size.width repeats:YES block:^(NSTimer * _Nonnull timer) {
+//            weakSelf.mainView.contentOffset = scrollingPoint;
+//            if (CGPointEqualToPoint(scrollingPoint, endPoint)) {
+//                [weakSelf invalidateTimer2];
+//            }
+//            scrollingPoint = CGPointMake(scrollingPoint.x+1, scrollingPoint.y);
+//        }];
+//        [[NSRunLoop currentRunLoop] addTimer:self.timer2 forMode:NSRunLoopCommonModes];
+//    } else {
+//        _mainView.contentOffset = CGPointMake(targetIndex * [UIScreen mainScreen].bounds.size.width, 0);
+//    }
 }
 
 - (int)currentIndex

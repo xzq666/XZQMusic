@@ -19,6 +19,7 @@ typedef void(^CompleteBlock)(id obj, NSError *error);
 @property(nonatomic,copy) NSString *albumname_hilight;
 @property(nonatomic,assign) NSInteger songid;
 @property(nonatomic,copy) NSString *songmid;
+@property(nonatomic,copy) NSString *purl;
 @property(nonatomic,copy) NSString *songname;
 @property(nonatomic,copy) NSString *songname_hilight;
 @property(nonatomic,strong) NSArray *singer;

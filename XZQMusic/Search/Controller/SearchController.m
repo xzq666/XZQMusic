@@ -131,6 +131,11 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 70, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-70-44) style:UITableViewStyleGrouped];
+        if ([XZQSingleton sharedInstance].isPlayMusic) {
+            _tableView.frame = CGRectMake(0, 70, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-70-44-75);
+        } else {
+            _tableView.frame = CGRectMake(0, 70, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-70-44);
+        }
         _tableView.backgroundColor = ([ZXTheme defaultTheme].zx_isDarkTheme ? ZXThemeDarkLevel2Color : [UIColor whiteColor]);
         _tableView.alwaysBounceVertical = NO;
         _tableView.delegate = self;
@@ -362,6 +367,15 @@
         footView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:@"HistoryFooterView"];
     }
     return footView;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([XZQSingleton sharedInstance].isPlayMusic && [self.view.subviews containsObject:self.tableView] && self.tableView.frame.size.height == SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-70-44) {
+        self.tableView.frame = CGRectMake(0, 70, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-70-44-75);
+    } else if (![XZQSingleton sharedInstance].isPlayMusic && [self.view.subviews containsObject:self.tableView] && self.tableView.frame.size.height == SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-70-44-75) {
+        self.tableView.frame = CGRectMake(0, 70, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-70-44);
+    }
 }
 
 @end

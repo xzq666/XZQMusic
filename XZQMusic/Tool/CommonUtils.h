@@ -43,6 +43,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur;
 
+/*
+ Base64编码
+ */
++ (NSString *)base64Encode:(NSString *)string;
+/*
+Base64编码
+*/
++ (NSString *)base64Decode:(NSString *)base64String;
+
 @end
 
 NS_ASSUME_NONNULL_END

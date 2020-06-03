@@ -21,7 +21,10 @@
 
 #import "XZQErrorView.h"
 #import "XZQSingleton.h"
+#import "XZQBottomPlayView.h"
+#import "XZQLyricsAnalysis.h"
 
+#import <AVFoundation/AVFoundation.h>
 #import <GPUImage.h>
 #import <Photos/Photos.h>
 #import <Masonry.h>

@@ -20,7 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.webView = [[XZQWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight) progressColor:TitleSelectColor];
+    self.webView = [[XZQWebView alloc] initWithFrame:CGRectZero progressColor:TitleSelectColor];
+    if ([XZQSingleton sharedInstance].isPlayMusic) {
+        self.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight-75);
+    } else {
+        self.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaBottomHeight);
+    }
     self.webView.webView.navigationDelegate = self;
     [self.webView loadUrl:[NSURL URLWithString:[self.url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
     [self.view addSubview:self.webView];

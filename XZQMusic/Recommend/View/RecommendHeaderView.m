@@ -26,7 +26,7 @@
 - (void)setupUIWithImages:(NSArray *)imageUrls {
     self.cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH * 432 / 1080) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
     self.cycleScrollView.imageURLStringsGroup = imageUrls;
-    self.cycleScrollView.autoScrollTimeInterval = 3.0;
+    self.cycleScrollView.autoScrollTimeInterval = 2;
     [self addSubview:self.cycleScrollView];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, SCREEN_WIDTH * 432 / 1080, SCREEN_WIDTH-30, 50)];

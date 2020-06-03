@@ -42,7 +42,7 @@
 - (CAShapeLayer *)outLayer {
     if (!_outLayer) {
         _outLayer = [CAShapeLayer layer];
-        CGRect rect = CGRectMake(self.lineWidth / 2, self.lineWidth / 2, self.frame.size.width, self.frame.size.height);
+        CGRect rect = CGRectMake(self.lineWidth / 2, self.lineWidth / 2, self.frame.size.width - self.lineWidth, self.frame.size.height - self.lineWidth);
         // 内切圆
         UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:rect];
         _outLayer.strokeColor = [UIColor hexStringToColor:@"#866E28"].CGColor;
@@ -57,7 +57,7 @@
 - (CAShapeLayer *)progressLayer {
     if (!_progressLayer) {
         _progressLayer = [CAShapeLayer layer];
-        CGRect rect = CGRectMake(self.lineWidth / 2, self.lineWidth / 2, self.frame.size.width, self.frame.size.height);
+        CGRect rect = CGRectMake(self.lineWidth / 2, self.lineWidth / 2, self.frame.size.width - self.lineWidth, self.frame.size.height - self.lineWidth);
         // 内切圆
         UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:rect];
         _progressLayer.fillColor = [UIColor clearColor].CGColor;

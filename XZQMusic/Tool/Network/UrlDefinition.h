@@ -31,4 +31,9 @@
 // 关键字搜索
 #define Search (@"http://ustbhuangyi.com/music/api/search")
 
+// 获取歌曲播放地址
+#define GetPurlUrl (@"http://ustbhuangyi.com/music/api/getPurlUrl")
+// 获取歌词
+#define Lyric (@"http://ustbhuangyi.com/music/api/lyric")
+
 #endif

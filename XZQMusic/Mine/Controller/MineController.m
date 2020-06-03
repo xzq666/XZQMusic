@@ -8,7 +8,6 @@
 
 #import "MineController.h"
 #import "RecommendDetailCell.h"
-#import "XZQCircleProgressView.h"
 
 @interface MineController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -47,15 +46,8 @@
     [playBtn addTarget:self action:@selector(playAll) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playBtn];
     
-//    [self.view addSubview:self.tableView];
-//    [self.tableView reloadData];
-    XZQCircleProgressView *circle = [[XZQCircleProgressView alloc] initWithFrame:CGRectMake(100, SafeAreaTopHeight + 100, 100, 100) lineWidth:2.0];
-    [circle updateProgressWithNumber:0.5];
-    [self.view addSubview:circle];
-    
-    UIImageView *playImage = [[UIImageView alloc] initWithFrame:CGRectMake(102, SafeAreaTopHeight+102, 96, 96)];
-    playImage.image = [[UIImage imageNamed:@"placeholder"] drawRectWithRoundedCorner];
-    [self.view addSubview:playImage];
+    [self.view addSubview:self.tableView];
+    [self.tableView reloadData];
 }
 
 - (void)playAll {
@@ -65,6 +57,11 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, SafeAreaTopHeight+60, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-60) style:UITableViewStylePlain];
+        if ([XZQSingleton sharedInstance].isPlayMusic) {
+            tableView.frame = CGRectMake(0, SafeAreaTopHeight+60, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-60-75);
+        } else {
+            tableView.frame = CGRectMake(0, SafeAreaTopHeight+60, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-60);
+        }
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.backgroundColor = CommonBgColor;
@@ -110,6 +107,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([XZQSingleton sharedInstance].isPlayMusic && [self.view.subviews containsObject:self.tableView] && self.tableView.frame.size.height == SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-60) {
+        self.tableView.frame = CGRectMake(0, SafeAreaTopHeight+60, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-60-75);
+    } else if (![XZQSingleton sharedInstance].isPlayMusic && [self.view.subviews containsObject:self.tableView] && self.tableView.frame.size.height == SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-60-75) {
+        self.tableView.frame = CGRectMake(0, SafeAreaTopHeight+60, SCREEN_WIDTH, SCREEN_HEIGHT-SafeAreaTopHeight-SafeAreaBottomHeight-60);
+    }
 }
 
 @end
