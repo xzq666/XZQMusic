@@ -23,6 +23,7 @@
 #import "XZQSingleton.h"
 #import "XZQBottomPlayView.h"
 #import "XZQLyricsAnalysis.h"
+#import "XZQMusicPlayer.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <GPUImage.h>

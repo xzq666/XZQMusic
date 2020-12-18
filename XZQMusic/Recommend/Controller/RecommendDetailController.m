@@ -147,6 +147,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     QQMusicModel *song = self.model.songlist[indexPath.row];
+    [[XZQMusicPlayer sharedInstance] xzq_initPlayerWithUserId:nil];
+    [XZQMusicPlayer sharedInstance].currentAudioModel = song;
     NSString *singerInfo = @"";
     for (Singer *singer in song.singer) {
         singerInfo = singerInfo.length > 0 ? [NSString stringWithFormat:@"%@/%@", singerInfo, singer.name] : singer.name;

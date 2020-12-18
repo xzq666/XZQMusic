@@ -86,6 +86,7 @@
 		F0B0E1FF2462B03100E2FFC5 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B0E1FE2462B03100E2FFC5 /* SearchController.m */; };
 		F0B31515246BDB8F00D5CA3B /* XZQWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B31514246BDB8F00D5CA3B /* XZQWebView.m */; };
 		F0B31518246BE01E00D5CA3B /* WebController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B31517246BE01E00D5CA3B /* WebController.m */; };
+		F0BAC1FF2489DA20003A3C5B /* XZQPlayerFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BAC1FE2489DA20003A3C5B /* XZQPlayerFileManager.m */; };
 		F0BF29C7246CF6F7005118E0 /* RecommendDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF29C6246CF6F7005118E0 /* RecommendDetailController.m */; };
 		F0C2480E247650E100BAC780 /* RankDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C2480D247650E100BAC780 /* RankDetailModel.m */; };
 		F0C248112476565F00BAC780 /* RankDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0C248102476565F00BAC780 /* RankDetailCell.m */; };
@@ -274,6 +275,8 @@
 		F0B31514246BDB8F00D5CA3B /* XZQWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQWebView.m; sourceTree = "<group>"; };
 		F0B31516246BE01E00D5CA3B /* WebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebController.h; sourceTree = "<group>"; };
 		F0B31517246BE01E00D5CA3B /* WebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebController.m; sourceTree = "<group>"; };
+		F0BAC1FD2489DA20003A3C5B /* XZQPlayerFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XZQPlayerFileManager.h; sourceTree = "<group>"; };
+		F0BAC1FE2489DA20003A3C5B /* XZQPlayerFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XZQPlayerFileManager.m; sourceTree = "<group>"; };
 		F0BF29C5246CF6F7005118E0 /* RecommendDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendDetailController.h; sourceTree = "<group>"; };
 		F0BF29C6246CF6F7005118E0 /* RecommendDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendDetailController.m; sourceTree = "<group>"; };
 		F0C2480C247650E100BAC780 /* RankDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RankDetailModel.h; sourceTree = "<group>"; };
@@ -367,6 +370,8 @@
 				F0625796248601AB00BE8D68 /* XZQLyricsAnalysis.m */,
 				F04B8DB12487495500003E55 /* XZQMusicPlayer.h */,
 				F04B8DB22487495500003E55 /* XZQMusicPlayer.m */,
+				F0BAC1FD2489DA20003A3C5B /* XZQPlayerFileManager.h */,
+				F0BAC1FE2489DA20003A3C5B /* XZQPlayerFileManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1277,6 +1282,7 @@
 				F0C248112476565F00BAC780 /* RankDetailCell.m in Sources */,
 				F0B0E1AF24628C2300E2FFC5 /* ZXActivityIndicatorViewTheme.m in Sources */,
 				F0B31518246BE01E00D5CA3B /* WebController.m in Sources */,
+				F0BAC1FF2489DA20003A3C5B /* XZQPlayerFileManager.m in Sources */,
 				F0B0E1AD24628C2300E2FFC5 /* ZXSwitchTheme.m in Sources */,
 				F0CDAA23246926300043EB31 /* SearchResultCell.m in Sources */,
 				F0B0E1B024628C2300E2FFC5 /* UIStepper+ZXTheme.m in Sources */,

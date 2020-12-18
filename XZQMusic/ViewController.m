@@ -179,7 +179,7 @@
         [self.bottomView setHidden:NO];
     };
     [window.rootViewController presentViewController:vc animated:YES completion:^{
-        
+        [[XZQMusicPlayer sharedInstance] xzq_playerPlayWithAudioId:0];
     }];
 }
 

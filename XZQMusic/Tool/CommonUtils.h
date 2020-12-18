@@ -52,6 +52,11 @@ Base64编码
 */
 + (NSString *)base64Decode:(NSString *)base64String;
 
+/*
+ 判断是否是本地地址
+ */
++ (BOOL)isLocalWithUrlString:(NSString *)urlString;
+
 @end
 
 NS_ASSUME_NONNULL_END

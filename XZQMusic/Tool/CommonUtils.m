@@ -252,4 +252,11 @@
     return string;
 }
 
++ (BOOL)isLocalWithUrlString:(NSString *)urlString {
+    if ([urlString hasPrefix:@"http"]) {
+        return NO;
+    }
+    return YES;
+}
+
 @end
